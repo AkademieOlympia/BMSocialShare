@@ -54,6 +54,7 @@
         
         // initialize facebook with default permissions
         if (_appId != nil) {
+            NSLog(@"BMSocialShare: Using Facebook APP ID: %@", _appId);
             [self enableFacebookWithPermissions:[NSArray arrayWithObjects: @"publish_stream", @"offline_access", nil]];
         }
         
