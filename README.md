@@ -4,6 +4,10 @@ BMSocialShare
 Posting to Facebook, Twitter and Email made dead simple on iOS.
 
 
+![Facebook iPhone](https://github.com/blockhaus/BMSocialShare/raw/framework/images/facebook_iPhone.png)
+![Facebook Stream](https://github.com/blockhaus/BMSocialShare/raw/framework/images/facebook_stream.png)
+
+
 Why?
 ---
 
@@ -19,17 +23,17 @@ Facebook
 
 1. Right click on your project's plist, choose `Open As -> Source Code` and insert the following snippet with your own Facebook APP ID:
 
-  	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string></string>
-			<key>CFBundleURLSchemes</key>
-			<array>           
-				<string>fb123456789012345</string>
-			</array>
-		</dict>
-	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+    <dict>
+    <key>CFBundleURLName</key>
+    <string></string>
+    <key>CFBundleURLSchemes</key>
+    <array>           
+    <string>fb123456789012345</string>
+    </array>
+    </dict>
+    </array>
 
 
 1. Overwrite `handleOpenURL` in your AppDelegate for SSO to work:
