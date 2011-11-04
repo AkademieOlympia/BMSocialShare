@@ -73,7 +73,6 @@
 			children = (
 				BC1C5ADF1463E98100320179 /* facebook-ios-sdk.xcodeproj */,
 				BC1C5AD21463E73F00320179 /* Foundation.framework */,
-				BC1C5B1C1464133300320179 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,13 +101,6 @@
 				BC1C5AE71463E98100320179 /* libfacebook_ios_sdk.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BC1C5B1C1464133300320179 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
