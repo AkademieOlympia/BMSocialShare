@@ -9,7 +9,25 @@
 /* Begin PBXBuildFile section */
 		BC1C5AD31463E73F00320179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1C5AD21463E73F00320179 /* Foundation.framework */; };
 		BC1C5AD91463E73F00320179 /* BMSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1C5AD81463E73F00320179 /* BMSocialShare.m */; };
+		BC1C5AEA1463E99B00320179 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1C5AE71463E98100320179 /* libfacebook_ios_sdk.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC1C5AE61463E98100320179 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC1C5ADF1463E98100320179 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "facebook-ios-sdk";
+		};
+		BC1C5AE81463E99400320179 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC1C5ADF1463E98100320179 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "facebook-ios-sdk";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BC1C5ACF1463E73F00320179 /* libBMSocialShare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBMSocialShare.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -17,6 +35,7 @@
 		BC1C5AD61463E73F00320179 /* BMSocialShare-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMSocialShare-Prefix.pch"; sourceTree = "<group>"; };
 		BC1C5AD71463E73F00320179 /* BMSocialShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMSocialShare.h; sourceTree = "<group>"; };
 		BC1C5AD81463E73F00320179 /* BMSocialShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMSocialShare.m; sourceTree = "<group>"; };
+		BC1C5ADF1463E98100320179 /* facebook-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "facebook-ios-sdk.xcodeproj"; path = "../facebook-ios-sdk/src/facebook-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1C5AEA1463E99B00320179 /* libfacebook_ios_sdk.a in Frameworks */,
 				BC1C5AD31463E73F00320179 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +71,7 @@
 		BC1C5AD11463E73F00320179 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC1C5ADF1463E98100320179 /* facebook-ios-sdk.xcodeproj */,
 				BC1C5AD21463E73F00320179 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -72,6 +93,14 @@
 				BC1C5AD61463E73F00320179 /* BMSocialShare-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC1C5AE01463E98100320179 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C5AE71463E98100320179 /* libfacebook_ios_sdk.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +127,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BC1C5AE91463E99400320179 /* PBXTargetDependency */,
 			);
 			name = BMSocialShare;
 			productName = BMSocialShare;
@@ -123,12 +153,28 @@
 			mainGroup = BC1C5AC41463E73F00320179;
 			productRefGroup = BC1C5AD01463E73F00320179 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BC1C5AE01463E98100320179 /* Products */;
+					ProjectRef = BC1C5ADF1463E98100320179 /* facebook-ios-sdk.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BC1C5ACE1463E73F00320179 /* BMSocialShare */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BC1C5AE71463E98100320179 /* libfacebook_ios_sdk.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfacebook_ios_sdk.a;
+			remoteRef = BC1C5AE61463E98100320179 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BC1C5ACB1463E73F00320179 /* Sources */ = {
@@ -140,6 +186,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC1C5AE91463E99400320179 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "facebook-ios-sdk";
+			targetProxy = BC1C5AE81463E99400320179 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BC1C5ADA1463E73F00320179 /* Debug */ = {
@@ -161,6 +215,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../facebook-ios-sdk/src/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
@@ -178,6 +233,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../facebook-ios-sdk/src/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
