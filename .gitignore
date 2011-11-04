@@ -1,0 +1,49 @@
+# xcode noise
+._*
+.Spotlight-V100
+.Trashes
+*.mode1
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.pyc
+*.xcworkspace
+xcuserdata
+*~.nib/
+*.swp
+build/
+
+# old skool
+.svn
+CVS
+
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+
+# osx noise
+.DS_Store
+profile
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini

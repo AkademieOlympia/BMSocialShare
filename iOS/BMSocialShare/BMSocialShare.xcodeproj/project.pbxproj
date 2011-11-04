@@ -1,0 +1,234 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC1C5AD31463E73F00320179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1C5AD21463E73F00320179 /* Foundation.framework */; };
+		BC1C5AD91463E73F00320179 /* BMSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1C5AD81463E73F00320179 /* BMSocialShare.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BC1C5ACF1463E73F00320179 /* libBMSocialShare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBMSocialShare.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1C5AD21463E73F00320179 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC1C5AD61463E73F00320179 /* BMSocialShare-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMSocialShare-Prefix.pch"; sourceTree = "<group>"; };
+		BC1C5AD71463E73F00320179 /* BMSocialShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMSocialShare.h; sourceTree = "<group>"; };
+		BC1C5AD81463E73F00320179 /* BMSocialShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMSocialShare.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC1C5ACC1463E73F00320179 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC1C5AD31463E73F00320179 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC1C5AC41463E73F00320179 = {
+			isa = PBXGroup;
+			children = (
+				BC1C5AD41463E73F00320179 /* BMSocialShare */,
+				BC1C5AD11463E73F00320179 /* Frameworks */,
+				BC1C5AD01463E73F00320179 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC1C5AD01463E73F00320179 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C5ACF1463E73F00320179 /* libBMSocialShare.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC1C5AD11463E73F00320179 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C5AD21463E73F00320179 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC1C5AD41463E73F00320179 /* BMSocialShare */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C5AD71463E73F00320179 /* BMSocialShare.h */,
+				BC1C5AD81463E73F00320179 /* BMSocialShare.m */,
+				BC1C5AD51463E73F00320179 /* Supporting Files */,
+			);
+			path = BMSocialShare;
+			sourceTree = "<group>";
+		};
+		BC1C5AD51463E73F00320179 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC1C5AD61463E73F00320179 /* BMSocialShare-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BC1C5ACD1463E73F00320179 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BC1C5ACE1463E73F00320179 /* BMSocialShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC1C5ADC1463E73F00320179 /* Build configuration list for PBXNativeTarget "BMSocialShare" */;
+			buildPhases = (
+				BC1C5ACB1463E73F00320179 /* Sources */,
+				BC1C5ACC1463E73F00320179 /* Frameworks */,
+				BC1C5ACD1463E73F00320179 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BMSocialShare;
+			productName = BMSocialShare;
+			productReference = BC1C5ACF1463E73F00320179 /* libBMSocialShare.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC1C5AC61463E73F00320179 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Blockhaus Medienagentur";
+			};
+			buildConfigurationList = BC1C5AC91463E73F00320179 /* Build configuration list for PBXProject "BMSocialShare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BC1C5AC41463E73F00320179;
+			productRefGroup = BC1C5AD01463E73F00320179 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC1C5ACE1463E73F00320179 /* BMSocialShare */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC1C5ACB1463E73F00320179 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC1C5AD91463E73F00320179 /* BMSocialShare.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BC1C5ADA1463E73F00320179 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BC1C5ADB1463E73F00320179 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC1C5ADD1463E73F00320179 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BMSocialShare.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BMSocialShare/BMSocialShare-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BC1C5ADE1463E73F00320179 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BMSocialShare.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BMSocialShare/BMSocialShare-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC1C5AC91463E73F00320179 /* Build configuration list for PBXProject "BMSocialShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC1C5ADA1463E73F00320179 /* Debug */,
+				BC1C5ADB1463E73F00320179 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC1C5ADC1463E73F00320179 /* Build configuration list for PBXNativeTarget "BMSocialShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC1C5ADD1463E73F00320179 /* Debug */,
+				BC1C5ADE1463E73F00320179 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC1C5AC61463E73F00320179 /* Project object */;
+}
