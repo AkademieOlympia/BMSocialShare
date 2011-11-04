@@ -8,13 +8,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import <Twitter/Twitter.h>
 #import "FBConnect.h"
 
 
 
 
-@interface BMSocialShare : NSObject <FBDialogDelegate, FBSessionDelegate> {
+@interface BMSocialShare : NSObject <FBDialogDelegate, FBSessionDelegate, MFMailComposeViewControllerDelegate> {
     Facebook *_facebook;
     NSString *_appId;
     NSArray *_permissions;

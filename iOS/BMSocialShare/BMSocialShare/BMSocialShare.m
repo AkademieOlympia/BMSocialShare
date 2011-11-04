@@ -279,10 +279,130 @@
         [parentViewController presentModalViewController:tweetViewController animated:YES];
         
         
+    } else {
+        [self showAlertWithTitle:@"Error" andMessage:@"Twitter is not supported on this device!"];
     }
 }
 
 
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Email
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+-(void)emailPublishText:(NSString *)text
+            withSubject:(NSString *)subject
+              withImage:(NSString *)imagePath 
+ inParentViewController:(UIViewController *)parentViewController {
+    
+    
+    // check how we can send emails
+    BOOL cansend = FALSE;
+    Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+	if (mailClass != nil) { 			
+		if ([mailClass canSendMail]) {
+			cansend = TRUE;
+		}
+	}
+    
+    
+    if (cansend) {
+        
+        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+        picker.mailComposeDelegate = self;
+        
+        if (subject) {
+            [picker setSubject:subject];
+        }
+
+        if (text) {
+            [picker setMessageBody:text isHTML:NO];
+        }
+        
+        if (imagePath) {
+            
+            NSString *filename = [imagePath lastPathComponent];
+            NSString *fileExtension = [imagePath stringByDeletingPathExtension];
+            NSString *mimeType = [NSString stringWithFormat:@"image/%@", fileExtension];
+            
+            NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+            [picker addAttachmentData:imageData mimeType:mimeType fileName:filename];
+            
+        }
+
+/*
+        // Set up recipients
+        NSArray *toRecipients = [NSArray arrayWithObject:@"first@example.com"]; 
+        NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil]; 
+        NSArray *bccRecipients = [NSArray arrayWithObject:@"fourth@example.com"]; 
+        
+        [picker setToRecipients:toRecipients];
+        [picker setCcRecipients:ccRecipients];	
+        [picker setBccRecipients:bccRecipients];
+*/
+
+        [parentViewController presentModalViewController:picker animated:YES];
+        [picker release];
+        
+        
+    } else {
+        
+        
+/*
+ NSString *recipients = @"mailto:first@example.com?cc=second@example.com,third@example.com&subject=Hello from California!";
+*/
+        
+        NSMutableString *msg = [NSMutableString stringWithString:@"mailto:"];
+
+        if (subject) {
+            [msg appendFormat:@"subject=%@", subject];            
+        }
+        
+        if (text) {
+            [msg appendFormat:@"&body=%@", text];            
+        }
+
+        NSString *email = [msg stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+
+    }
+    
+}
+
+
+/*
+
+// Dismisses the email composition interface when users tap Cancel or Send. Proceeds to update the message field with the result of the operation.
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
+{	
+	message.hidden = NO;
+	// Notifies users about errors associated with the interface
+	switch (result)
+	{
+		case MFMailComposeResultCancelled:
+			message.text = @"Result: canceled";
+			break;
+		case MFMailComposeResultSaved:
+			message.text = @"Result: saved";
+			break;
+		case MFMailComposeResultSent:
+			message.text = @"Result: sent";
+			break;
+		case MFMailComposeResultFailed:
+			message.text = @"Result: failed";
+			break;
+		default:
+			message.text = @"Result: not sent";
+			break;
+	}
+	[self dismissModalViewControllerAnimated:YES];
+}
+*/
 
 
 
