@@ -1,29 +1,44 @@
 BMSocialShare
 =============
 
-This library is used to easily post to Facebook, Twitter and also Email on iOS.
+Posting to Facebook, Twitter and Email made dead simple on iOS.
 
 
 Why?
 ---
 
-The two main situations we face each time we develop an App is simple sharing on Facebook, Twitter and Email. There are only two things we need to do mainly:
+For most Apps we develop there are only two things we need to do mainly:
 1. Share a post on Facebook or Twitter with an image and a comment by the user. Same via Email.
 2. We need to share the AppStore or Android Market link for the App.
 
-We always just wanted to import a framework or library to our projects to do those simple tasks. But all other libraries come with loads of parameteres we never needed. So here is the solution FINALLY ;)
+All other sharing libraries come with loads of parameteres we never needed.
 
 
 Facebook
 --------
-1. integrate url scheme / app id in plist. app id is automatically extracted from plist.
-2. handle open url in app delegate
+
+1. Right click on your project's plist, choose `Open As -> Source Code` and insert the following snippet with your own Facebook APP ID:
+
+  	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>           
+				<string>fb123456789012345</string>
+			</array>
+		</dict>
+	</array>
+
+
+1. Overwrite `handleOpenURL` in your AppDelegate for SSO to work:
 
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
         return [[BMSocialShare sharedInstance] handleOpenURL:url];
     }
 
-3. To post something on Facebook you do the following:
+1. Post to Facebook:
     
     [[BMSocialShare sharedInstance] facebookPublishWithParams:params
 
@@ -32,6 +47,9 @@ Facebook
 
 Twitter
 -------
+
+2. Integrate `Twitter.framework``
+
 
 For iOS5 the integrated `TWTweetComposeViewController` is used.
 
