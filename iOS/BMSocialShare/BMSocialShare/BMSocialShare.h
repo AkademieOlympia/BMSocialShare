@@ -4,6 +4,7 @@
 //
 //  Created by Vinzenz-Emanuel Weber on 04.11.11.
 //  Copyright (c) 2011 Blockhaus Medienagentur. All rights reserved.
+//  www.blockhaus-media.com
 //
 
 #import <Foundation/Foundation.h>
@@ -16,16 +17,17 @@
     Facebook *_facebook;
     NSString *_appId;
     NSArray *_permissions;
-    NSString *_imageURL;
+    NSMutableDictionary *_params;
 }
+
 
 + (BMSocialShare *) sharedInstance;
 
 
 /* Facebook */
-- (void)enableFacebookWithAppId:(NSString *)appId;
-- (void)enableFacebookWithAppId:(NSString *)appId andPermissions:(NSArray *)permissions;
-- (void)facebookPublishToStreamWithParams:(NSMutableDictionary *)params andImageAtURL:(NSString *)imageUrl;
+- (BOOL)handleOpenURL:(NSURL *)url;
+- (void)enableFacebookWithPermissions:(NSArray *)permissions;
+- (void)facebookPublishWithParams:(NSMutableDictionary *)params;
 
 
 /* Twitter */
