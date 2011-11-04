@@ -4,8 +4,8 @@ BMSocialShare
 Posting to Facebook, Twitter and Email made dead simple on iOS.
 
 
-![Facebook iPhone](https://github.com/blockhaus/BMSocialShare/raw/framework/images/facebook_iPhone.png)
-![Facebook Stream](https://github.com/blockhaus/BMSocialShare/raw/framework/images/facebook_stream.png)
+![Facebook iPhone](https://github.com/blockhaus/BMSocialShare/raw/master/images/header.png)
+
 
 
 Why?
