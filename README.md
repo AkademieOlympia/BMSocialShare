@@ -25,3 +25,6 @@ INTEGRATE FACEBOOK
 
 3. [[BMSocialShare sharedInstance] enableFacebookWithAppId:@"YOUR_FB_APP_ID"];
 4. [[BMSocialShare sharedInstance] share;
+
+
+Framework created based on [www.github.com/kstenerud/iOS-Universal]
