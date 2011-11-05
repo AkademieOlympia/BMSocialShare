@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC8712C114656E03007DF497 /* BMFacebookPost.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8712BF14656E03007DF497 /* BMFacebookPost.h */; };
+		BC8712C214656E03007DF497 /* BMFacebookPost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8712C014656E03007DF497 /* BMFacebookPost.m */; };
 		BCD650711464271E00D10C93 /* BMSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6506F1464271E00D10C93 /* BMSocialShare.m */; };
 		BCD650721464271E00D10C93 /* BMSocialShare.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD650701464271E00D10C93 /* BMSocialShare.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCD65098146428B200D10C93 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65080146428B200D10C93 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC8712BF14656E03007DF497 /* BMFacebookPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFacebookPost.h; sourceTree = "<group>"; };
+		BC8712C014656E03007DF497 /* BMFacebookPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMFacebookPost.m; sourceTree = "<group>"; };
 		BCD65061146426C800D10C93 /* BMSocialShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMSocialShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD65065146426C800D10C93 /* BMSocialShare-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BMSocialShare-Info.plist"; sourceTree = "<group>"; };
 		BCD65069146426C800D10C93 /* BMSocialShare-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMSocialShare-Prefix.pch"; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		BCD65063146426C800D10C93 /* BMSocialShare */ = {
 			isa = PBXGroup;
 			children = (
+				BC8712BF14656E03007DF497 /* BMFacebookPost.h */,
+				BC8712C014656E03007DF497 /* BMFacebookPost.m */,
 				BCD650701464271E00D10C93 /* BMSocialShare.h */,
 				BCD6506F1464271E00D10C93 /* BMSocialShare.m */,
 				BCD65064146426C800D10C93 /* Supporting Files */,
@@ -171,6 +177,7 @@
 				BCD650AC146428B200D10C93 /* FBDialog.h in Headers */,
 				BCD650AD146428B200D10C93 /* FBLoginDialog.h in Headers */,
 				BCD650AE146428B200D10C93 /* FBRequest.h in Headers */,
+				BC8712C114656E03007DF497 /* BMFacebookPost.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +286,7 @@
 				BCD650A6146428B200D10C93 /* FBDialog.m in Sources */,
 				BCD650A7146428B200D10C93 /* FBLoginDialog.m in Sources */,
 				BCD650A8146428B200D10C93 /* FBRequest.m in Sources */,
+				BC8712C214656E03007DF497 /* BMFacebookPost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
