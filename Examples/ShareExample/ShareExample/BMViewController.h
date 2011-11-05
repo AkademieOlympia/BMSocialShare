@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BMSocialShare/BMSocialShare.h>
+
 
 @interface BMViewController : UIViewController
+
+- (IBAction)facebookButtonClicked:(id)sender;
+- (IBAction)emailButtonClicked:(id)sender;
+- (IBAction)twitterButtonClicked:(id)sender;
 
 @end

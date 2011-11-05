@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		BC8712C114656E03007DF497 /* BMFacebookPost.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8712BF14656E03007DF497 /* BMFacebookPost.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC8712C214656E03007DF497 /* BMFacebookPost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8712C014656E03007DF497 /* BMFacebookPost.m */; };
+		BC8712F71465DF0F007DF497 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65080146428B200D10C93 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8712F81465DF0F007DF497 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65081146428B200D10C93 /* NSObject+SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8712F91465DF0F007DF497 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65083146428B200D10C93 /* NSString+SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8712FA1465DF0F007DF497 /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65085146428B200D10C93 /* SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8712FB1465DF0F007DF497 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65087146428B200D10C93 /* SBJsonBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8712FC1465DF0F007DF497 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65089146428B200D10C93 /* SBJsonParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8712FD1465DF0F007DF497 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD6508B146428B200D10C93 /* SBJsonWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8712FE1465DF0F007DF497 /* Facebook.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65092146428B200D10C93 /* Facebook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8712FF1465DF0F007DF497 /* FBConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65093146428B200D10C93 /* FBConnect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8713001465DF0F007DF497 /* FBDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65094146428B200D10C93 /* FBDialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8713011465DF0F007DF497 /* FBLoginDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65095146428B200D10C93 /* FBLoginDialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC8713021465DF0F007DF497 /* FBRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65096146428B200D10C93 /* FBRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCD650711464271E00D10C93 /* BMSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6506F1464271E00D10C93 /* BMSocialShare.m */; };
 		BCD650721464271E00D10C93 /* BMSocialShare.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD650701464271E00D10C93 /* BMSocialShare.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCD6509A146428B200D10C93 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD65082146428B200D10C93 /* NSObject+SBJSON.m */; };
@@ -73,6 +85,7 @@
 			children = (
 				BCD6507E146428A200D10C93 /* Facebook */,
 				BCD65063146426C800D10C93 /* BMSocialShare */,
+				BCD65064146426C800D10C93 /* Supporting Files */,
 				BCD65062146426C800D10C93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,7 +105,6 @@
 				BC8712C014656E03007DF497 /* BMFacebookPost.m */,
 				BCD650701464271E00D10C93 /* BMSocialShare.h */,
 				BCD6506F1464271E00D10C93 /* BMSocialShare.m */,
-				BCD65064146426C800D10C93 /* Supporting Files */,
 			);
 			path = BMSocialShare;
 			sourceTree = "<group>";
@@ -104,6 +116,7 @@
 				BCD65069146426C800D10C93 /* BMSocialShare-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = BMSocialShare;
 			sourceTree = "<group>";
 		};
 		BCD6507E146428A200D10C93 /* Facebook */ = {
@@ -154,6 +167,18 @@
 			files = (
 				BCD650721464271E00D10C93 /* BMSocialShare.h in Headers */,
 				BC8712C114656E03007DF497 /* BMFacebookPost.h in Headers */,
+				BC8712F71465DF0F007DF497 /* JSON.h in Headers */,
+				BC8712F81465DF0F007DF497 /* NSObject+SBJSON.h in Headers */,
+				BC8712F91465DF0F007DF497 /* NSString+SBJSON.h in Headers */,
+				BC8712FA1465DF0F007DF497 /* SBJSON.h in Headers */,
+				BC8712FB1465DF0F007DF497 /* SBJsonBase.h in Headers */,
+				BC8712FC1465DF0F007DF497 /* SBJsonParser.h in Headers */,
+				BC8712FD1465DF0F007DF497 /* SBJsonWriter.h in Headers */,
+				BC8712FE1465DF0F007DF497 /* Facebook.h in Headers */,
+				BC8712FF1465DF0F007DF497 /* FBConnect.h in Headers */,
+				BC8713001465DF0F007DF497 /* FBDialog.h in Headers */,
+				BC8713011465DF0F007DF497 /* FBLoginDialog.h in Headers */,
+				BC8713021465DF0F007DF497 /* FBRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

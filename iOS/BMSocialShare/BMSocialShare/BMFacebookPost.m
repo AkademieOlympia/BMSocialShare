@@ -65,8 +65,14 @@
 
 
 - (NSMutableDictionary *)params {
+    
+    if (_properties != nil && _attachment != nil) {
+        [_attachment setObject:_properties forKey:@"properties"];
+    }
+    
     SBJSON *jsonWriter = [[SBJSON new] autorelease];
-    return [NSMutableDictionary dictionaryWithObjectsAndKeys:[jsonWriter stringWithObject:_attachment], @"attachment", nil];
+    NSString *attachmentString = [jsonWriter stringWithObject:_attachment];
+    return [NSMutableDictionary dictionaryWithObjectsAndKeys:attachmentString, @"attachment", nil];
 }
 
 

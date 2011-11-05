@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BMSocialShare/BMSocialShare.h>
 
 @class BMViewController;
 

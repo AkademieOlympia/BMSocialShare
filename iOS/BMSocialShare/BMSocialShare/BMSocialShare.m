@@ -97,7 +97,7 @@
  * from within your AppDelegate:
  *
  * - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
- *     return [[BMSocialShare sharedInstance] handleOpenURL: url];
+ *     return [[BMSocialShare sharedInstance] facebookHandleOpenURL: url];
  * }
  * 
  */
@@ -143,7 +143,7 @@
 
 - (void)facebookPublish:(BMFacebookPost *)post {
 
-    _post = [post copy];
+    _post = [post retain];
     
     if (!_facebook.isSessionValid) {
         [_facebook authorize:_permissions];

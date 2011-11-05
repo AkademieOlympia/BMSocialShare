@@ -36,6 +36,12 @@
     return YES;
 }
 
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [[BMSocialShare sharedInstance] facebookHandleOpenURL:url];
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
