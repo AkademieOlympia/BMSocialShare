@@ -12,6 +12,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import <Twitter/Twitter.h>
 #import "FBConnect.h"
+#import "BMFacebookPost.h"
 
 
 
@@ -20,7 +21,7 @@
     Facebook *_facebook;
     NSString *_appId;
     NSArray *_permissions;
-    NSMutableDictionary *_params;
+    BMFacebookPost *_post;
 }
 
 
@@ -28,9 +29,9 @@
 
 
 /* Facebook */
-- (BOOL)handleOpenURL:(NSURL *)url;
-- (void)enableFacebookWithPermissions:(NSArray *)permissions;
-- (void)facebookPublishWithParams:(NSMutableDictionary *)params;
+- (BOOL)facebookHandleOpenURL:(NSURL *)url;
+- (void)facebookPermissions:(NSArray *)permissions;
+- (void)facebookPublish:(BMFacebookPost *)post;
 
 
 /* Twitter */

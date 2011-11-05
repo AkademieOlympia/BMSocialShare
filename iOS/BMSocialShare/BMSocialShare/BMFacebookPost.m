@@ -20,15 +20,16 @@
         
         if (title) {
             [_attachment setObject:title forKey:@"name"];
+            
+            if (href) {
+                [_attachment setObject:href forKey:@"href"];   
+            }
         }
         
         if (description) {
             [_attachment setObject:description forKey:@"description"];
         }
         
-        if (href)) {
-            [_attachment setObject:href forKey:@"href"];   
-        }
                 
     }
     return self;
@@ -63,10 +64,9 @@
 
 
 
-- (NSMutableDictionary *)getParams {
+- (NSMutableDictionary *)params {
     SBJSON *jsonWriter = [[SBJSON new] autorelease];
-    NSString *attachmentStr = [jsonWriter stringWithObject:attachment];
-    return [NSMutableDictionary dictionaryWithObjectsAndKeys:attachmentStr, @"attachment", nil];
+    return [NSMutableDictionary dictionaryWithObjectsAndKeys:[jsonWriter stringWithObject:_attachment], @"attachment", nil];
 }
 
 

@@ -55,7 +55,7 @@
         // initialize facebook with default permissions
         if (_appId != nil) {
             NSLog(@"BMSocialShare: Using Facebook APP ID: %@", _appId);
-            [self enableFacebookWithPermissions:[NSArray arrayWithObjects: @"publish_stream", @"offline_access", nil]];
+            [self facebookPermissions:[NSArray arrayWithObjects: @"publish_stream", @"offline_access", nil]];
         }
         
         
@@ -101,7 +101,7 @@
  * }
  * 
  */
-- (BOOL)handleOpenURL:(NSURL *)url {
+- (BOOL)facebookHandleOpenURL:(NSURL *)url {
     if (_facebook != nil) {
         return [_facebook handleOpenURL:url];
     }
@@ -115,7 +115,7 @@
  * Enable Facebook sharing with custom permissions.
  *
  */
-- (void)enableFacebookWithPermissions:(NSArray *)permissions {
+- (void)facebookPermissions:(NSArray *)permissions {
     
     if (_facebook == nil && _appId != nil) {
         _facebook = [[Facebook alloc] initWithAppId:_appId andDelegate:self];
@@ -140,16 +140,17 @@
  * Open an inline dialog that allows the logged in user to publish a story to his or
  * her wall.
  */
-- (void)facebookPublishWithParams:(NSMutableDictionary *)params {
-    
-    _params = [params copy];
+
+- (void)facebookPublish:(BMFacebookPost *)post {
+
+    _post = [post copy];
     
     if (!_facebook.isSessionValid) {
         [_facebook authorize:_permissions];
         return;
     }
     
-    [_facebook dialog:@"stream.publish" andParams:params andDelegate:self];
+    [_facebook dialog:@"stream.publish" andParams:_post.params andDelegate:self];
 }
 
 
@@ -185,8 +186,8 @@
     [defaults setObject:[_facebook expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
     
-    if (_params) {
-        [self facebookPublishWithParams:_params];
+    if (_post) {
+        [self facebookPublish:_post];
     }
     
 }
@@ -411,7 +412,6 @@
 
 
 - (void)dealloc {
-    
 }
 
 

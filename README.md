@@ -21,6 +21,7 @@ All other sharing libraries come with loads of parameteres we never needed.
 Facebook
 --------
 
+1. Create an App on Facebook http://developers.facebook.com/apps   
 1. Right click on your project's plist, choose `Open As -> Source Code` and insert the following snippet with your own Facebook APP ID:
 
     <key>CFBundleURLTypes</key>
