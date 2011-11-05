@@ -52,6 +52,7 @@
 	[super viewDidDisappear:animated];
 }
 
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -61,6 +62,7 @@
         return YES;
     }
 }
+
 
 - (IBAction)facebookButtonClicked:(id)sender {
     
@@ -84,9 +86,27 @@
     
 }
 
+
 - (IBAction)emailButtonClicked:(id)sender {
+
+    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"blockhaus-ohne-slogan-200px" ofType:@"png"];
+
+    [[BMSocialShare sharedInstance] emailPublishText:@"Posting to Facebook, Twitter and Email made dead simple on iOS. Simply include BMSocialShare as a framework and you are ready to go.\nhttp://github.com/blockhaus/BMSocialShare"
+                                         withSubject:@"Simple sharing with BMSocialShare"
+                                           withImage:storePath 
+                              inParentViewController:self];
+    
 }
 
+
 - (IBAction)twitterButtonClicked:(id)sender {
+    
+    [[BMSocialShare sharedInstance] twitterPublishText:@"Posting to Facebook, Twitter and Email made dead simple on iOS with BMSocialShare"
+                                             withImage:nil
+                                                andURL:[NSURL URLWithString:@"http://github.com/blockhaus/BMSocialShare"]
+                                inParentViewController:self]; 
+
 }
+
+
 @end

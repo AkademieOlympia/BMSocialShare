@@ -31,6 +31,7 @@
 		BC8713341465E34B007DF497 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8713271465E34A007DF497 /* SBJsonBase.m */; };
 		BC8713351465E34B007DF497 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8713291465E34A007DF497 /* SBJsonParser.m */; };
 		BC8713361465E34B007DF497 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC87132B1465E34A007DF497 /* SBJsonWriter.m */; };
+		BC87133C1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png in Resources */ = {isa = PBXBuildFile; fileRef = BC87133B1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		BC8713291465E34A007DF497 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		BC87132A1465E34A007DF497 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		BC87132B1465E34A007DF497 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		BC87133B1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blockhaus-ohne-slogan-200px.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				BC87130F1465E34A007DF497 /* Facebook */,
 				BC8713051465E335007DF497 /* BMSocialShare */,
+				BC87133B1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png */,
 				BC8712E2146575F7007DF497 /* BMAppDelegate.h */,
 				BC8712E3146575F7007DF497 /* BMAppDelegate.m */,
 				BC8712E5146575F7007DF497 /* BMViewController.h */,
@@ -259,6 +262,7 @@
 				BC8712EA146575F7007DF497 /* BMViewController_iPhone.xib in Resources */,
 				BC8712ED146575F7007DF497 /* BMViewController_iPad.xib in Resources */,
 				BC87132D1465E34A007DF497 /* FBDialog.bundle in Resources */,
+				BC87133C1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

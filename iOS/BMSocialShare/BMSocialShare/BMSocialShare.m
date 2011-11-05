@@ -327,7 +327,7 @@
         if (imagePath) {
             
             NSString *filename = [imagePath lastPathComponent];
-            NSString *fileExtension = [imagePath stringByDeletingPathExtension];
+            NSString *fileExtension = [filename pathExtension];
             NSString *mimeType = [NSString stringWithFormat:@"image/%@", fileExtension];
             
             NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
