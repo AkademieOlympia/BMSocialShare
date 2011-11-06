@@ -66,6 +66,8 @@
 
 - (IBAction)facebookButtonClicked:(id)sender {
     
+    
+#if 0
     BMFacebookPost *post = [[BMFacebookPost alloc] initWithTitle:@"Simple sharing via Facebook, Email and Twitter for iOS!" 
                                                  descriptionText:@"Posting to Facebook, Twitter and Email made dead simple on iOS. Simply include BMSocialShare as a framework and you are ready to go." 
                                                          andHref:@"https://github.com/blockhaus/BMSocialShare"];    
@@ -80,6 +82,13 @@
     [post addPropertyWithTitle:@"Developed by" 
                descriptionText:@"blockhaus" 
                        andHref:@"http://www.blockhaus-media.com"];
+#else
+    
+    
+    BMFacebookPost *post = [[BMFacebookPost alloc] initWithImage:[UIImage imageNamed:@"background~ipad.png"]];
+    
+    
+#endif
     
     [[BMSocialShare sharedInstance] facebookPublish:post];
     
@@ -88,7 +97,7 @@
 
 - (IBAction)emailButtonClicked:(id)sender {
 
-    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"blockhaus-ohne-slogan-200px" ofType:@"png"];
+    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"blockhaus" ofType:@"png"];
 
     [[BMSocialShare sharedInstance] emailPublishText:@"Posting to Facebook, Twitter and Email made dead simple on iOS. Simply include BMSocialShare as a framework and you are ready to go.\nhttp://github.com/blockhaus/BMSocialShare"
                                          withSubject:@"Simple sharing with BMSocialShare"

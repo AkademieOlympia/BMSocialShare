@@ -14,7 +14,50 @@
 
 
 
+
+
+
+@interface BMSocialShare()
+
+
+
+typedef enum apiCall {
+    kAPILogout,
+    kAPIGraphUserPermissionsDelete,
+    kDialogPermissionsExtended,
+    kDialogRequestsSendToMany,
+    kAPIGetAppUsersFriendsNotUsing,
+    kAPIGetAppUsersFriendsUsing,
+    kAPIFriendsForDialogRequests,
+    kDialogRequestsSendToSelect,
+    kAPIFriendsForTargetDialogRequests,
+    kDialogRequestsSendToTarget,
+    kDialogFeedUser,
+    kAPIFriendsForDialogFeed,
+    kDialogFeedFriend,
+    kAPIGraphUserPermissions,
+    kAPIGraphMe,
+    kAPIGraphUserFriends,
+    kDialogPermissionsCheckin,
+    kDialogPermissionsCheckinForRecent,
+    kDialogPermissionsCheckinForPlaces,
+    kAPIGraphSearchPlace,
+    kAPIGraphUserCheckins,
+    kAPIGraphUserPhotosPost,
+    kAPIGraphUserVideosPost,
+} apiCall;
+
+
+- (void)facebookPermissions:(NSArray *)permissions;
+
+
+@end
+
+
+
+
 @implementation BMSocialShare
+
 
 
 
@@ -144,17 +187,41 @@
  * Open an inline dialog that allows the logged in user to publish a story to his or
  * her wall.
  */
-
 - (void)facebookPublish:(BMFacebookPost *)post {
     
     if (!_facebook.isSessionValid) {
-        [[NSUserDefaults standardUserDefaults] setObject:post.params forKey:kFacebookPostParams];
+        
+        // store the last facebook post parameters before we switch to the facebook app or safari
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:post.params forKey:kFacebookPostParams];
+        [defaults synchronize];
+        
         [_facebook authorize:_permissions];
+        
         return;
     }
     
-    [_facebook dialog:@"stream.publish" andParams:post.params andDelegate:self];
+         
+    switch (post.type) {
+            
+        case kPostImage:
+            [_facebook requestWithGraphPath:@"me/photos"
+                                  andParams:post.params
+                              andHttpMethod:@"POST"
+                                andDelegate:self];
+            break;
+            
+        default:
+        case kPostText:
+            [_facebook dialog:@"stream.publish"
+                    andParams:post.params
+                  andDelegate:self];        
+            break;
+            
+    }
+
 }
+
 
 
 /**
@@ -172,6 +239,51 @@
     [defaults synchronize];
     
 }
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// FBRequestDelegate
+
+
+/**
+ * Called when a request returns and its response has been parsed into
+ * an object. The resulting object may be a dictionary, an array, a string,
+ * or a number, depending on the format of the API response. If you need access
+ * to the raw response, use:
+ *
+ * (void)request:(FBRequest *)request
+ * didReceiveResponse:(NSURLResponse *)response
+ */
+- (void)request:(FBRequest *)request didLoad:(id)result {
+    if ([result isKindOfClass:[NSArray class]]) {
+        result = [result objectAtIndex:0];
+    }
+    
+    NSLog(@"RESULT: %@", result);
+    
+    NSString *photoId = [result objectForKey:@"id"];
+    if (photoId) {
+        NSLog(@"Uploaded Photo with ID: %@", photoId);        
+        [_facebook requestWithGraphPath:photoId andDelegate:self];
+    }
+    
+/*
+    if ([result objectForKey:@"id"]) {
+        [self.label setText:@"Photo upload Success"];
+    } else {
+        [self.label setText:[result objectForKey:@"name"]];
+    }
+*/
+};
+
+/**
+ * Called when an error prevents the Facebook API request from completing
+ * successfully.
+ */
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+    NSLog(@"ERROR: %@", [error localizedDescription]);
+};
 
 
 
@@ -346,6 +458,13 @@
 	}
     
     
+    if (parentViewController == nil) {
+        return;
+    }
+    
+    _emailParentViewController = parentViewController;
+    
+    
     if (cansend) {
         
         MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
@@ -411,34 +530,13 @@
 }
 
 
-/*
 
 // Dismisses the email composition interface when users tap Cancel or Send. Proceeds to update the message field with the result of the operation.
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
 {	
-	message.hidden = NO;
-	// Notifies users about errors associated with the interface
-	switch (result)
-	{
-		case MFMailComposeResultCancelled:
-			message.text = @"Result: canceled";
-			break;
-		case MFMailComposeResultSaved:
-			message.text = @"Result: saved";
-			break;
-		case MFMailComposeResultSent:
-			message.text = @"Result: sent";
-			break;
-		case MFMailComposeResultFailed:
-			message.text = @"Result: failed";
-			break;
-		default:
-			message.text = @"Result: not sent";
-			break;
-	}
-	[self dismissModalViewControllerAnimated:YES];
+	[_emailParentViewController dismissModalViewControllerAnimated:YES];
 }
-*/
+
 
 
 
@@ -447,6 +545,8 @@
 
 
 - (void)dealloc {
+    [_facebook release];
+    [super dealloc];
 }
 
 

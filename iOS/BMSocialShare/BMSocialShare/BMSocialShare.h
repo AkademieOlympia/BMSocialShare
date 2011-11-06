@@ -17,10 +17,12 @@
 
 
 
-@interface BMSocialShare : NSObject <FBDialogDelegate, FBSessionDelegate, MFMailComposeViewControllerDelegate> {
+@interface BMSocialShare : NSObject <FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, MFMailComposeViewControllerDelegate> {
+    int _currentAPICall;
     Facebook *_facebook;
     NSString *_appId;
     NSArray *_permissions;
+    UIViewController *_emailParentViewController;
 }
 
 
@@ -29,7 +31,6 @@
 
 /* Facebook */
 - (BOOL)facebookHandleOpenURL:(NSURL *)url;
-- (void)facebookPermissions:(NSArray *)permissions;
 - (void)facebookPublish:(BMFacebookPost *)post;
 
 

@@ -9,16 +9,40 @@
 #import <Foundation/Foundation.h>
 #import "SBJSON.h"
 
+
+typedef enum facebookPostType {
+    kPostText,
+    kPostImage
+} facebookPostType;
+
+
 @interface BMFacebookPost : NSObject {
+    facebookPostType _type;
     NSMutableDictionary *_attachment;
     NSMutableDictionary *_media;
     NSMutableDictionary *_properties;
+    UIImage *_image;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *params;
+@property (nonatomic, readonly) facebookPostType type;
 
+
+
+/**
+ * In case you need to post to your user's wall and maybe want to include
+ * an image from some URL, you should be using the following methods.
+ */
 - (id)initWithTitle:(NSString *)title descriptionText:(NSString *)description andHref:(NSString *)href;
 - (void)setImageUrl:(NSString *)imageUrl withHref:(NSString *)href;
 - (void)addPropertyWithTitle:(NSString *)title descriptionText:(NSString *)description andHref:(NSString *)href;
+
+/**
+ * In case you need to post an image to your user's album, init this
+ * class with an image.
+ */
+- (id)initWithImage:(UIImage *)image;
+
+
 
 @end

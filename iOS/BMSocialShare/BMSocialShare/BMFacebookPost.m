@@ -10,12 +10,14 @@
 
 @implementation BMFacebookPost
 
+@synthesize type = _type;
 
 
 - (id)initWithTitle:(NSString *)title descriptionText:(NSString *)description andHref:(NSString *)href {
 
     if (self = [super init]) {
         
+        _type = kPostText;
         _attachment = [[NSMutableDictionary alloc] init];
         
         if (title) {
@@ -34,6 +36,15 @@
     }
     return self;
     
+}
+
+
+- (id)initWithImage:(UIImage *)image {
+    if (self = [super init]) {
+        _type = kPostImage;
+        _image = image;
+    }
+    return self;
 }
 
 
@@ -60,20 +71,54 @@
     [prop setObject:description forKey:@"text"];
     [prop setObject:href forKey:@"href"];
     [_properties setObject:prop forKey:title];
+    [prop release];
 }
 
 
 
 - (NSMutableDictionary *)params {
-    
-    if (_properties != nil && _attachment != nil) {
-        [_attachment setObject:_properties forKey:@"properties"];
+
+    switch (_type) {
+            
+        case kPostImage:
+            return [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                    _image, @"picture",
+                    @"Just some text ... to try out comments. Even with a link: http://www.dotzmag.com", @"message",
+                    @"This is the name of this image!", @"name",
+                    @"This is the description of this image!", @"description",
+                    nil];
+            
+        default:
+        case kPostText:
+            if (_properties != nil && _attachment != nil) {
+                [_attachment setObject:_properties forKey:@"properties"];
+            }
+            
+            SBJSON *jsonWriter = [[SBJSON new] autorelease];
+            NSString *attachmentString = [jsonWriter stringWithObject:_attachment];
+            return [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                    @"This is the message!", @"message",
+                    attachmentString, @"attachment", nil];
+            
     }
     
-    SBJSON *jsonWriter = [[SBJSON new] autorelease];
-    NSString *attachmentString = [jsonWriter stringWithObject:_attachment];
-    return [NSMutableDictionary dictionaryWithObjectsAndKeys:attachmentString, @"attachment", nil];
+    
 }
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Memory Management
+
+
+- (void)dealloc {
+    [_attachment release];
+    [_media release];
+    [_properties release];
+    [_image release];
+    [super dealloc];
+}
+
+
 
 
 @end

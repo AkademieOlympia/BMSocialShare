@@ -14,8 +14,7 @@
 		BC8712E0146575F7007DF497 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8712DF146575F7007DF497 /* main.m */; };
 		BC8712E4146575F7007DF497 /* BMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8712E3146575F7007DF497 /* BMAppDelegate.m */; };
 		BC8712E7146575F7007DF497 /* BMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8712E6146575F7007DF497 /* BMViewController.m */; };
-		BC8712EA146575F7007DF497 /* BMViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8712E8146575F7007DF497 /* BMViewController_iPhone.xib */; };
-		BC8712ED146575F7007DF497 /* BMViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8712EB146575F7007DF497 /* BMViewController_iPad.xib */; };
+		BC8712EA146575F7007DF497 /* BMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8712E8146575F7007DF497 /* BMViewController.xib */; };
 		BC8712F414657698007DF497 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8712F314657698007DF497 /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BC8713041465DFAB007DF497 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8713031465DFAB007DF497 /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BC87130C1465E335007DF497 /* BMFacebookPost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8713071465E335007DF497 /* BMFacebookPost.m */; };
@@ -31,7 +30,16 @@
 		BC8713341465E34B007DF497 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8713271465E34A007DF497 /* SBJsonBase.m */; };
 		BC8713351465E34B007DF497 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8713291465E34A007DF497 /* SBJsonParser.m */; };
 		BC8713361465E34B007DF497 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC87132B1465E34A007DF497 /* SBJsonWriter.m */; };
-		BC87133C1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png in Resources */ = {isa = PBXBuildFile; fileRef = BC87133B1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png */; };
+		BC9D20581466C64700FBC05D /* button_email.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9D20551466C64700FBC05D /* button_email.png */; };
+		BC9D20591466C64700FBC05D /* button_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9D20561466C64700FBC05D /* button_facebook.png */; };
+		BC9D205A1466C64700FBC05D /* button_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9D20571466C64700FBC05D /* button_twitter.png */; };
+		BC9D205F1466C7A400FBC05D /* blockhaus.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9D205B1466C7A300FBC05D /* blockhaus.png */; };
+		BC9D20601466C7A400FBC05D /* button_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9D205C1466C7A300FBC05D /* button_email@2x.png */; };
+		BC9D20611466C7A400FBC05D /* button_facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9D205D1466C7A300FBC05D /* button_facebook@2x.png */; };
+		BC9D20621466C7A400FBC05D /* button_twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9D205E1466C7A400FBC05D /* button_twitter@2x.png */; };
+		BCC5E4E81466D7FC00AC08F5 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E51466D7FC00AC08F5 /* background.png */; };
+		BCC5E4E91466D7FC00AC08F5 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E61466D7FC00AC08F5 /* background@2x.png */; };
+		BCC5E4EA1466D7FC00AC08F5 /* background~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E71466D7FC00AC08F5 /* background~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +55,7 @@
 		BC8712E3146575F7007DF497 /* BMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMAppDelegate.m; sourceTree = "<group>"; };
 		BC8712E5146575F7007DF497 /* BMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMViewController.h; sourceTree = "<group>"; };
 		BC8712E6146575F7007DF497 /* BMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMViewController.m; sourceTree = "<group>"; };
-		BC8712E9146575F7007DF497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BMViewController_iPhone.xib; sourceTree = "<group>"; };
-		BC8712EC146575F7007DF497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BMViewController_iPad.xib; sourceTree = "<group>"; };
+		BC8712E9146575F7007DF497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BMViewController.xib; sourceTree = "<group>"; };
 		BC8712F314657698007DF497 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		BC8713031465DFAB007DF497 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BC8713061465E335007DF497 /* BMFacebookPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFacebookPost.h; sourceTree = "<group>"; };
@@ -79,7 +86,16 @@
 		BC8713291465E34A007DF497 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		BC87132A1465E34A007DF497 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		BC87132B1465E34A007DF497 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		BC87133B1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blockhaus-ohne-slogan-200px.png"; sourceTree = "<group>"; };
+		BC9D20551466C64700FBC05D /* button_email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_email.png; sourceTree = "<group>"; };
+		BC9D20561466C64700FBC05D /* button_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_facebook.png; sourceTree = "<group>"; };
+		BC9D20571466C64700FBC05D /* button_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_twitter.png; sourceTree = "<group>"; };
+		BC9D205B1466C7A300FBC05D /* blockhaus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blockhaus.png; sourceTree = "<group>"; };
+		BC9D205C1466C7A300FBC05D /* button_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_email@2x.png"; sourceTree = "<group>"; };
+		BC9D205D1466C7A300FBC05D /* button_facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_facebook@2x.png"; sourceTree = "<group>"; };
+		BC9D205E1466C7A400FBC05D /* button_twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_twitter@2x.png"; sourceTree = "<group>"; };
+		BCC5E4E51466D7FC00AC08F5 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		BCC5E4E61466D7FC00AC08F5 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		BCC5E4E71466D7FC00AC08F5 /* background~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,13 +148,12 @@
 			children = (
 				BC87130F1465E34A007DF497 /* Facebook */,
 				BC8713051465E335007DF497 /* BMSocialShare */,
-				BC87133B1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png */,
+				BC9D20501466C4D800FBC05D /* Graphics */,
 				BC8712E2146575F7007DF497 /* BMAppDelegate.h */,
 				BC8712E3146575F7007DF497 /* BMAppDelegate.m */,
 				BC8712E5146575F7007DF497 /* BMViewController.h */,
 				BC8712E6146575F7007DF497 /* BMViewController.m */,
-				BC8712E8146575F7007DF497 /* BMViewController_iPhone.xib */,
-				BC8712EB146575F7007DF497 /* BMViewController_iPad.xib */,
+				BC8712E8146575F7007DF497 /* BMViewController.xib */,
 				BC8712DA146575F7007DF497 /* Supporting Files */,
 			);
 			path = ShareExample;
@@ -207,6 +222,23 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		BC9D20501466C4D800FBC05D /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				BCC5E4E51466D7FC00AC08F5 /* background.png */,
+				BCC5E4E61466D7FC00AC08F5 /* background@2x.png */,
+				BCC5E4E71466D7FC00AC08F5 /* background~ipad.png */,
+				BC9D20551466C64700FBC05D /* button_email.png */,
+				BC9D205C1466C7A300FBC05D /* button_email@2x.png */,
+				BC9D20561466C64700FBC05D /* button_facebook.png */,
+				BC9D205D1466C7A300FBC05D /* button_facebook@2x.png */,
+				BC9D20571466C64700FBC05D /* button_twitter.png */,
+				BC9D205E1466C7A400FBC05D /* button_twitter@2x.png */,
+				BC9D205B1466C7A300FBC05D /* blockhaus.png */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,10 +291,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8712DE146575F7007DF497 /* InfoPlist.strings in Resources */,
-				BC8712EA146575F7007DF497 /* BMViewController_iPhone.xib in Resources */,
-				BC8712ED146575F7007DF497 /* BMViewController_iPad.xib in Resources */,
+				BC8712EA146575F7007DF497 /* BMViewController.xib in Resources */,
 				BC87132D1465E34A007DF497 /* FBDialog.bundle in Resources */,
-				BC87133C1465FC26007DF497 /* blockhaus-ohne-slogan-200px.png in Resources */,
+				BC9D20581466C64700FBC05D /* button_email.png in Resources */,
+				BC9D20591466C64700FBC05D /* button_facebook.png in Resources */,
+				BC9D205A1466C64700FBC05D /* button_twitter.png in Resources */,
+				BC9D205F1466C7A400FBC05D /* blockhaus.png in Resources */,
+				BC9D20601466C7A400FBC05D /* button_email@2x.png in Resources */,
+				BC9D20611466C7A400FBC05D /* button_facebook@2x.png in Resources */,
+				BC9D20621466C7A400FBC05D /* button_twitter@2x.png in Resources */,
+				BCC5E4E81466D7FC00AC08F5 /* background.png in Resources */,
+				BCC5E4E91466D7FC00AC08F5 /* background@2x.png in Resources */,
+				BCC5E4EA1466D7FC00AC08F5 /* background~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,20 +342,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		BC8712E8146575F7007DF497 /* BMViewController_iPhone.xib */ = {
+		BC8712E8146575F7007DF497 /* BMViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BC8712E9146575F7007DF497 /* en */,
 			);
-			name = BMViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		BC8712EB146575F7007DF497 /* BMViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BC8712EC146575F7007DF497 /* en */,
-			);
-			name = BMViewController_iPad.xib;
+			name = BMViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -415,6 +447,7 @@
 				BC8712F2146575F7007DF497 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -37,7 +37,7 @@ Facebook
     </array>
 
 
-1. Overwrite `handleOpenURL` in your AppDelegate for SSO to work:
+1. Overwrite `handleOpenURL` in your AppDelegate for SSO to work. More info can be found on https://developers.facebook.com/docs/mobile/ios/build/#implementsso
 
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
         return [[BMSocialShare sharedInstance] handleOpenURL:url];
@@ -58,7 +58,10 @@ Twitter
 
 For iOS5 the integrated `TWTweetComposeViewController` is used.
 
-    [[BMSocialShare sharedInstance] twitterPublishText:@"Some text to tweet" withImage:nil andURL:nil inParentViewController:self];
+    [[BMSocialShare sharedInstance] twitterPublishText:@"Some text to tweet" 
+                                             withImage:nil 
+                                                andURL:nil 
+                                inParentViewController:self];
 
 
 EMail
@@ -66,7 +69,8 @@ EMail
 
 
 
-Thanks to
+Third Party
 ---------
 
-This framework was created based on [https://github.com/kstenerud/iOS-Universal-Framework].
+* This framework was created based on [https://github.com/kstenerud/iOS-Universal-Framework].
+* Graphics in the Examples were taken from http://365psd.com/day/240/ and http://subtlepatterns.com/
