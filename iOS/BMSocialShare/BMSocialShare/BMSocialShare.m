@@ -9,8 +9,12 @@
 
 #import "BMSocialShare.h"
 
-@implementation BMSocialShare
 
+#define kFacebookPostParams @"FacebookPostParams"
+
+
+
+@implementation BMSocialShare
 
 
 
@@ -142,17 +146,32 @@
  */
 
 - (void)facebookPublish:(BMFacebookPost *)post {
-
-    _post = [post retain];
     
     if (!_facebook.isSessionValid) {
+        [[NSUserDefaults standardUserDefaults] setObject:post.params forKey:kFacebookPostParams];
         [_facebook authorize:_permissions];
         return;
     }
     
-    [_facebook dialog:@"stream.publish" andParams:_post.params andDelegate:self];
+    [_facebook dialog:@"stream.publish" andParams:post.params andDelegate:self];
 }
 
+
+/**
+ * In case the user does not want to login to Facebook or
+ * somehow is cancelling the post, we need to remove the post
+ * from user defaults.
+ */
+- (void)deleteLastPostFromUserDefaults {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *params = [defaults dictionaryForKey:kFacebookPostParams];
+    if (params) {
+        [defaults removeObjectForKey:kFacebookPostParams];
+    }
+    [defaults synchronize];
+    
+}
 
 
 
@@ -160,13 +179,23 @@
 ////////////////////////////////////////////////////////////////////////////////
 // FBDialogDelegate
 
+
 /**
  * Called when a UIServer Dialog successfully return.
  */
 - (void)dialogDidComplete:(FBDialog *)dialog {
-    NSLog(@"publish successfully");
+    NSLog(@"dialogDidComplete");
+    [self deleteLastPostFromUserDefaults];
 }
 
+
+/**
+ * Called when the dialog is cancelled and is about to be dismissed.
+ */
+- (void)dialogDidNotComplete:(FBDialog *)dialog {
+    NSLog(@"dialogDidNotComplete");
+    [self deleteLastPostFromUserDefaults];
+}
 
 
 
@@ -186,8 +215,12 @@
     [defaults setObject:[_facebook expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
     
-    if (_post) {
-        [self facebookPublish:_post];
+    // is there a post that was created before we logged in?
+    NSDictionary *params = [defaults dictionaryForKey:kFacebookPostParams];
+    if (params) {
+        NSMutableDictionary *mutableParams = [NSMutableDictionary dictionaryWithDictionary:params];
+        // send it now that we are logged in!
+        [_facebook dialog:@"stream.publish" andParams:mutableParams andDelegate:self];
     }
     
 }
@@ -197,6 +230,7 @@
  */
 - (void)fbDidNotLogin:(BOOL)cancelled {
     NSLog(@"fbDidNotLogin");
+    [self deleteLastPostFromUserDefaults];
 }
 
 /**
@@ -204,6 +238,7 @@
  */
 - (void)fbDidLogout {
     NSLog(@"fbDidLogout");
+    [self deleteLastPostFromUserDefaults];
 }
 
 

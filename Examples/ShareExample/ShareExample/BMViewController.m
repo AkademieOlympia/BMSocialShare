@@ -66,7 +66,6 @@
 
 - (IBAction)facebookButtonClicked:(id)sender {
     
-    
     BMFacebookPost *post = [[BMFacebookPost alloc] initWithTitle:@"Simple sharing via Facebook, Email and Twitter for iOS!" 
                                                  descriptionText:@"Posting to Facebook, Twitter and Email made dead simple on iOS. Simply include BMSocialShare as a framework and you are ready to go." 
                                                          andHref:@"https://github.com/blockhaus/BMSocialShare"];    
@@ -74,7 +73,7 @@
     [post setImageUrl:@"http://www.blockhausmedien.at/images/logo-new.gif" 
              withHref:@"http://www.blockhaus-media.com"];
     
-    [post addPropertyWithTitle:@"Download the source code on" 
+    [post addPropertyWithTitle:@"Download" 
                descriptionText:@"github.com/blockhaus/BMSocialShare" 
                        andHref:@"http://github.com/blockhaus/BMSocialShare"];
     

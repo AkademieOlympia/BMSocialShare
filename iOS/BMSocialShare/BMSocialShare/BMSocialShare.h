@@ -21,7 +21,6 @@
     Facebook *_facebook;
     NSString *_appId;
     NSArray *_permissions;
-    BMFacebookPost *_post;
 }
 
 
