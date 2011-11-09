@@ -40,6 +40,8 @@
 		BCC5E4E81466D7FC00AC08F5 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E51466D7FC00AC08F5 /* background.png */; };
 		BCC5E4E91466D7FC00AC08F5 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E61466D7FC00AC08F5 /* background@2x.png */; };
 		BCC5E4EA1466D7FC00AC08F5 /* background~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E71466D7FC00AC08F5 /* background~ipad.png */; };
+		BCCAC6A2146B035600761D90 /* BMSocialShare.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCCAC6A1146B035600761D90 /* BMSocialShare.bundle */; };
+		BCD9A1B0146ACF220046CC97 /* BMDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A1AE146ACF220046CC97 /* BMDialog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,9 @@
 		BCC5E4E51466D7FC00AC08F5 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BCC5E4E61466D7FC00AC08F5 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		BCC5E4E71466D7FC00AC08F5 /* background~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background~ipad.png"; sourceTree = "<group>"; };
+		BCCAC6A1146B035600761D90 /* BMSocialShare.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BMSocialShare.bundle; sourceTree = "<group>"; };
+		BCD9A1AE146ACF220046CC97 /* BMDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDialog.m; sourceTree = "<group>"; };
+		BCD9A1AF146ACF220046CC97 /* BMDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDialog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +178,9 @@
 		BC8713051465E335007DF497 /* BMSocialShare */ = {
 			isa = PBXGroup;
 			children = (
+				BCCAC6A1146B035600761D90 /* BMSocialShare.bundle */,
+				BCD9A1AF146ACF220046CC97 /* BMDialog.h */,
+				BCD9A1AE146ACF220046CC97 /* BMDialog.m */,
 				BC8713061465E335007DF497 /* BMFacebookPost.h */,
 				BC8713071465E335007DF497 /* BMFacebookPost.m */,
 				BC87130A1465E335007DF497 /* BMSocialShare.h */,
@@ -303,6 +311,7 @@
 				BCC5E4E81466D7FC00AC08F5 /* background.png in Resources */,
 				BCC5E4E91466D7FC00AC08F5 /* background@2x.png in Resources */,
 				BCC5E4EA1466D7FC00AC08F5 /* background~ipad.png in Resources */,
+				BCCAC6A2146B035600761D90 /* BMSocialShare.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +337,7 @@
 				BC8713341465E34B007DF497 /* SBJsonBase.m in Sources */,
 				BC8713351465E34B007DF497 /* SBJsonParser.m in Sources */,
 				BC8713361465E34B007DF497 /* SBJsonWriter.m in Sources */,
+				BCD9A1B0146ACF220046CC97 /* BMDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

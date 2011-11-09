@@ -176,7 +176,7 @@ static BOOL FBIsDeviceIPad() {
     }
 }
 
-- (void)updateWebOrientation {
+- (void)updateOrientation {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if (UIInterfaceOrientationIsLandscape(orientation)) {
         /*
@@ -207,29 +207,6 @@ static BOOL FBIsDeviceIPad() {
     [UIView commitAnimations];
 }
 
-- (NSURL*)generateURL:(NSString*)baseURL params:(NSDictionary*)params {
-    if (params) {
-        NSMutableArray* pairs = [NSMutableArray array];
-        for (NSString* key in params.keyEnumerator) {
-            NSString* value = [params objectForKey:key];
-            NSString* escaped_value = (NSString *)CFURLCreateStringByAddingPercentEscapes(
-                                                                                          NULL, /* allocator */
-                                                                                          (CFStringRef)value,
-                                                                                          NULL, /* charactersToLeaveUnescaped */
-                                                                                          (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                          kCFStringEncodingUTF8);
-            
-            [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escaped_value]];
-            [escaped_value release];
-        }
-        
-        NSString* query = [pairs componentsJoinedByString:@"&"];
-        NSString* url = [NSString stringWithFormat:@"%@?%@", baseURL, query];
-        return [NSURL URLWithString:url];
-    } else {
-        return [NSURL URLWithString:baseURL];
-    }
-}
 
 - (void)addObservers {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -257,9 +234,7 @@ static BOOL FBIsDeviceIPad() {
 }
 
 - (void)dismiss:(BOOL)animated {
-    [self dialogWillDisappear];
-    
-    
+
     if (animated) {
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:kTransitionDuration];
@@ -275,6 +250,58 @@ static BOOL FBIsDeviceIPad() {
 - (void)cancel {
     [self dialogDidCancel:nil];
 }
+
+
+- (void)post {
+    
+    if (_textField.text) {
+        [_post setImageName:_textField.text];
+    }
+    
+    [_facebook requestWithGraphPath:@"me/photos"
+                          andParams:_post.params
+                      andHttpMethod:@"POST"
+                        andDelegate:self];
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// FBRequestDelegate
+
+
+/**
+ * Called when a request returns and its response has been parsed into
+ * an object. The resulting object may be a dictionary, an array, a string,
+ * or a number, depending on the format of the API response. If you need access
+ * to the raw response, use:
+ *
+ * (void)request:(FBRequest *)request
+ * didReceiveResponse:(NSURLResponse *)response
+ */
+- (void)request:(FBRequest *)request didLoad:(id)result {
+    if ([result isKindOfClass:[NSArray class]]) {
+        result = [result objectAtIndex:0];
+    }
+    
+    NSString *photoId = [result objectForKey:@"id"];
+    if (photoId) {
+        NSLog(@"Uploaded Photo with ID: %@", photoId);        
+        [self dialogDidSucceed:nil];
+        return;
+    }
+    
+    [self dialogDidCancel:nil];
+};
+
+/**
+ * Called when an error prevents the Facebook API request from completing
+ * successfully.
+ */
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+    NSLog(@"ERROR: %@", [error localizedDescription]);
+};
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // NSObject
@@ -292,33 +319,65 @@ static BOOL FBIsDeviceIPad() {
         
         _containerView = [[UIView alloc] initWithFrame:CGRectMake(kPadding, kPadding, 480, 480)];
         _containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        _containerView.backgroundColor = [UIColor greenColor];
+        _containerView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_containerView];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 400, 21)];
-        label.text = @"Share on Facebook";
+        UIImageView *toolbarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 45)];
+        toolbarImageView.image = [UIImage imageNamed:@"BMSocialShare.bundle/facebook_toolbar_background.png"];
+        toolbarImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        toolbarImageView.contentMode = UIViewContentModeScaleToFill;
+        [_containerView addSubview:toolbarImageView];
+
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 13, 480, 21)];
+        label.textAlignment = UITextAlignmentCenter;
+        label.text = @"Facebook";
+        label.font = [UIFont boldSystemFontOfSize:20];
+        label.textColor = [UIColor whiteColor];
+        label.shadowOffset = CGSizeMake(0, -1);
+        label.shadowColor = [UIColor blackColor];
+        label.backgroundColor = [UIColor clearColor];
+        label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [_containerView addSubview:label];
         
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 55, 440, 250)];
-        _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+ 
+        _textField =[[UITextField alloc] initWithFrame:CGRectMake(20, 55, 440, 50)];
+        _textField.placeholder = @"Comment ...";
+        _textField.borderStyle = UITextBorderStyleRoundedRect;
+        _textField.font = [UIFont systemFontOfSize:16];
+        _textField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//        [textField addTarget:self action:@selector(post) forControlEvents:UIControlEvent]
+        [_containerView addSubview:_textField];
+
+        
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 115, 440, 300)];
+        _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [_containerView addSubview:_imageView];
                 
-        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(20, 305, 440, 110)];
-        textView.text = @"Test text ........ ";
-        textView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
-        [_containerView addSubview:textView];
+
+        UIImage *buttonBackgroundImage = [UIImage imageNamed:@"BMSocialShare.bundle/facebook_button_background.png"];
         
-        UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(293, 423, 87, 37)];
+        UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, buttonBackgroundImage.size.width, buttonBackgroundImage.size.height)];
         [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-        cancelButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
         [cancelButton addTarget:self action:@selector(cancel)
                forControlEvents:UIControlEventTouchUpInside];
+        [cancelButton setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
+        cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        cancelButton.titleLabel.textColor = [UIColor whiteColor];
+        cancelButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        cancelButton.titleLabel.shadowColor = [UIColor blackColor];
         [_containerView addSubview:cancelButton];
         
-        UIButton *okButton = [[UIButton alloc] initWithFrame:CGRectMake(388, 423, 72, 37)];
-        [okButton setTitle:@"OK" forState:UIControlStateNormal];
-        okButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
+        UIButton *okButton = [[UIButton alloc] initWithFrame:CGRectMake(_containerView.frame.size.width - buttonBackgroundImage.size.width - 10, 10, buttonBackgroundImage.size.width, buttonBackgroundImage.size.height)];
+        [okButton setTitle:@"Share" forState:UIControlStateNormal];
+        okButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        [okButton setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
+        okButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        okButton.titleLabel.textColor = [UIColor whiteColor];
+        okButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        okButton.titleLabel.shadowColor = [UIColor blackColor];
+        [okButton addTarget:self action:@selector(post)
+               forControlEvents:UIControlEventTouchUpInside];
         [_containerView addSubview:okButton];
         
         UIImage* closeImage = [UIImage imageNamed:@"FBDialog.bundle/images/close.png"];
@@ -349,6 +408,8 @@ static BOOL FBIsDeviceIPad() {
         UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin
         | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         [self addSubview:_spinner];
+        
+        
         _modalBackgroundView = [[UIView alloc] init];
     }
     return self;
@@ -383,7 +444,7 @@ static BOOL FBIsDeviceIPad() {
 - (void)deviceOrientationDidChange:(void*)object {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if (!_showingKeyboard && [self shouldRotateToOrientation:orientation]) {
-        [self updateWebOrientation];
+        [self updateOrientation];
         
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
         [UIView beginAnimations:nil context:nil];
@@ -431,32 +492,15 @@ static BOOL FBIsDeviceIPad() {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // public
 
-/**
- * Find a specific parameter from the url
- */
-- (NSString *) getStringFromUrl: (NSString*) url needle:(NSString *) needle {
-    NSString * str = nil;
-    NSRange start = [url rangeOfString:needle];
-    if (start.location != NSNotFound) {
-        NSRange end = [[url substringFromIndex:start.location+start.length] rangeOfString:@"&"];
-        NSUInteger offset = start.location+start.length;
-        str = end.location == NSNotFound
-        ? [url substringFromIndex:offset]
-        : [url substringWithRange:NSMakeRange(offset, end.location)];
-        str = [str stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    }
-    
-    return str;
-}
 
+- (id)initWithFacebook:(Facebook *)facebook
+                  post:(BMFacebookPost *)post
+              delegate:(id <BMDialogDelegate>) delegate {
 
-
-- (id)initWithFacebookPost:(BMFacebookPost *)post
-                  delegate:(id <BMDialogDelegate>) delegate {
-    
     self = [self init];
     _post = [post retain];
     _delegate = delegate;
+    _facebook = facebook;
 
     _imageView.image = _post.image;
     
@@ -495,9 +539,7 @@ static BOOL FBIsDeviceIPad() {
     [window addSubview:_modalBackgroundView];
     
     [window addSubview:self];
-    
-    [self dialogWillAppear];
-    
+        
     self.transform = CGAffineTransformScale([self transformForOrientation], 0.001, 0.001);
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:kTransitionDuration/1.5];
@@ -531,24 +573,22 @@ static BOOL FBIsDeviceIPad() {
     [self dismiss:animated];
 }
 
-- (void)dialogWillAppear {
-}
-
-- (void)dialogWillDisappear {
-}
 
 - (void)dialogDidSucceed:(NSURL *)url {
-    
+/*
     if ([_delegate respondsToSelector:@selector(dialogCompleteWithUrl:)]) {
         [_delegate dialogCompleteWithUrl:url];
     }
+*/
     [self dismissWithSuccess:YES animated:YES];
 }
 
 - (void)dialogDidCancel:(NSURL *)url {
+/*
     if ([_delegate respondsToSelector:@selector(dialogDidNotCompleteWithUrl:)]) {
         [_delegate dialogDidNotCompleteWithUrl:url];
     }
+*/
     [self dismissWithSuccess:NO animated:YES];
 }
 

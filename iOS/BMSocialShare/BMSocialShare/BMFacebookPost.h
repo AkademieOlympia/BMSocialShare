@@ -22,6 +22,7 @@ typedef enum facebookPostType {
     NSMutableDictionary *_media;
     NSMutableDictionary *_properties;
     UIImage *_image;
+    NSString *_imageName;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *params;
@@ -42,7 +43,7 @@ typedef enum facebookPostType {
  * class with an image.
  */
 - (id)initWithImage:(UIImage *)image;
-
+- (void)setImageName:(NSString *)name;
 
 
 @end

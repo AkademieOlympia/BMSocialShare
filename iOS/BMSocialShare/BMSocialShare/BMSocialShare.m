@@ -8,7 +8,6 @@
 //
 
 #import "BMSocialShare.h"
-#import "BMShareViewController.h"
 
 
 
@@ -213,23 +212,9 @@ typedef enum apiCall {
             
         case kPostImage:
         {
-            
-            BMDialog *diaolog = [[BMDialog alloc] initWithFacebookPost:post delegate:self];
+            BMDialog *diaolog = [[BMDialog alloc] initWithFacebook:_facebook post:post delegate:self];
             [diaolog show];
-            
-            
-/*            
-            BMShareViewController *shareViewController = [[[BMShareViewController alloc] init] autorelease];
-            shareViewController.postImageOverlayView
-*/
-            
-            
-/*
-            [_facebook requestWithGraphPath:@"me/photos"
-                                  andParams:post.params
-                              andHttpMethod:@"POST"
-                                andDelegate:self];
-*/
+
         }
             break;
             

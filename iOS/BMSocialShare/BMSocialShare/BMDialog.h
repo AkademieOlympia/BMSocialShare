@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "BMFacebookPost.h"
+#import "Facebook.h"
 
 
 
@@ -20,7 +21,7 @@
  * Facebook dialog interface for start the facebook webView UIServer Dialog.
  */
 
-@interface BMDialog : UIView <UIWebViewDelegate> {
+@interface BMDialog : UIView <UIWebViewDelegate, FBRequestDelegate> {
     id<BMDialogDelegate> _delegate;
     UIActivityIndicatorView* _spinner;
     UIButton* _closeButton;
@@ -28,8 +29,11 @@
     BOOL _showingKeyboard;
     UIView *_containerView;
     BMFacebookPost *_post;
+    Facebook *_facebook;
+
     UIImageView *_imageView;
-    
+    UITextField *_textField;
+
     // Ensures that UI elements behind the dialog are disabled.
     UIView* _modalBackgroundView;
 }
@@ -39,8 +43,9 @@
  */
 @property(nonatomic,assign) id<BMDialogDelegate> delegate;
 
-- (id)initWithFacebookPost:(BMFacebookPost *)post
-                  delegate:(id <BMDialogDelegate>) delegate;
+- (id)initWithFacebook:(Facebook *)Facebook
+                  post:(BMFacebookPost *)post
+              delegate:(id <BMDialogDelegate>) delegate;
 
 
 /**
@@ -59,16 +64,6 @@
  * Hides the view and notifies delegates of an error.
  */
 - (void)dismissWithError:(NSError*)error animated:(BOOL)animated;
-
-/**
- * Subclasses may override to perform actions just prior to showing the dialog.
- */
-- (void)dialogWillAppear;
-
-/**
- * Subclasses may override to perform actions just after the dialog is hidden.
- */
-- (void)dialogWillDisappear;
 
 /**
  * Subclasses should override to process data returned from the server in a 'fbconnect' url.

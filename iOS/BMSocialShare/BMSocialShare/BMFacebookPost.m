@@ -48,6 +48,12 @@
 }
 
 
+- (void)setImageName:(NSString *)name {
+    _imageName = name;
+}
+
+
+
 - (void)setImageUrl:(NSString *)imageUrl withHref:(NSString *)href{
     
     if (_media == nil) {
@@ -81,12 +87,14 @@
     switch (_type) {
             
         case kPostImage:
-            return [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                    _image, @"picture",
-                    @"Just some text ... to try out comments. Even with a link: http://www.dotzmag.com", @"message",
-                    @"This is the name of this image!", @"name",
-                    @"This is the description of this image!", @"description",
-                    nil];
+        {
+            NSMutableDictionary *params = [NSMutableDictionary dictionary];
+            [params setObject:_image forKey:@"picture"];
+            if (_imageName) {
+                [params setObject:_image forKey:@"name"];
+            }            
+            return params;
+        }
             
         default:
         case kPostText:
@@ -97,7 +105,6 @@
             SBJSON *jsonWriter = [[SBJSON new] autorelease];
             NSString *attachmentString = [jsonWriter stringWithObject:_attachment];
             return [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                    @"This is the message!", @"message",
                     attachmentString, @"attachment", nil];
             
     }
@@ -115,6 +122,7 @@
     [_media release];
     [_properties release];
     [_image release];
+    [_imageName release];
     [super dealloc];
 }
 
