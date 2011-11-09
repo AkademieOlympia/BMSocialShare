@@ -33,6 +33,8 @@
 
     UIImageView *_imageView;
     UITextField *_textField;
+    UIButton *_cancelButton;
+    UIButton *_okButton;
 
     // Ensures that UI elements behind the dialog are disabled.
     UIView* _modalBackgroundView;

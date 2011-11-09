@@ -91,7 +91,7 @@
             NSMutableDictionary *params = [NSMutableDictionary dictionary];
             [params setObject:_image forKey:@"picture"];
             if (_imageName) {
-                [params setObject:_image forKey:@"name"];
+                [params setObject:_imageName forKey:@"message"];
             }            
             return params;
         }

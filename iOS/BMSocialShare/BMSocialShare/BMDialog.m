@@ -254,6 +254,13 @@ static BOOL FBIsDeviceIPad() {
 
 - (void)post {
     
+    _closeButton.enabled = FALSE;
+    _okButton.enabled = FALSE;
+    _cancelButton.enabled = FALSE;
+    _textField.enabled = FALSE;
+    _spinner.hidden = FALSE;
+    [_spinner startAnimating];
+    
     if (_textField.text) {
         [_post setImageName:_textField.text];
     }
@@ -299,6 +306,7 @@ static BOOL FBIsDeviceIPad() {
  */
 - (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
     NSLog(@"ERROR: %@", [error localizedDescription]);
+    [self dialogDidCancel:nil];
 };
 
 
@@ -349,36 +357,36 @@ static BOOL FBIsDeviceIPad() {
         [_containerView addSubview:_textField];
 
         
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 115, 440, 300)];
-        _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 115, _containerView.frame.size.height - 125, _containerView.frame.size.width - 40)];
+        _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin; // UIViewAutoresizingFlexibleBottomMargin
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [_containerView addSubview:_imageView];
                 
 
         UIImage *buttonBackgroundImage = [UIImage imageNamed:@"BMSocialShare.bundle/facebook_button_background.png"];
         
-        UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, buttonBackgroundImage.size.width, buttonBackgroundImage.size.height)];
-        [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-        [cancelButton addTarget:self action:@selector(cancel)
+        _cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, buttonBackgroundImage.size.width, buttonBackgroundImage.size.height)];
+        [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+        [_cancelButton addTarget:self action:@selector(cancel)
                forControlEvents:UIControlEventTouchUpInside];
-        [cancelButton setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
-        cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-        cancelButton.titleLabel.textColor = [UIColor whiteColor];
-        cancelButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-        cancelButton.titleLabel.shadowColor = [UIColor blackColor];
-        [_containerView addSubview:cancelButton];
+        [_cancelButton setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
+        _cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        _cancelButton.titleLabel.textColor = [UIColor whiteColor];
+        _cancelButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        _cancelButton.titleLabel.shadowColor = [UIColor blackColor];
+        [_containerView addSubview:_cancelButton];
         
-        UIButton *okButton = [[UIButton alloc] initWithFrame:CGRectMake(_containerView.frame.size.width - buttonBackgroundImage.size.width - 10, 10, buttonBackgroundImage.size.width, buttonBackgroundImage.size.height)];
-        [okButton setTitle:@"Share" forState:UIControlStateNormal];
-        okButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-        [okButton setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
-        okButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-        okButton.titleLabel.textColor = [UIColor whiteColor];
-        okButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-        okButton.titleLabel.shadowColor = [UIColor blackColor];
-        [okButton addTarget:self action:@selector(post)
+        _okButton = [[UIButton alloc] initWithFrame:CGRectMake(_containerView.frame.size.width - buttonBackgroundImage.size.width - 10, 10, buttonBackgroundImage.size.width, buttonBackgroundImage.size.height)];
+        [_okButton setTitle:@"Share" forState:UIControlStateNormal];
+        _okButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        [_okButton setBackgroundImage:buttonBackgroundImage forState:UIControlStateNormal];
+        _okButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        _okButton.titleLabel.textColor = [UIColor whiteColor];
+        _okButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        _okButton.titleLabel.shadowColor = [UIColor blackColor];
+        [_okButton addTarget:self action:@selector(post)
                forControlEvents:UIControlEventTouchUpInside];
-        [_containerView addSubview:okButton];
+        [_containerView addSubview:_okButton];
         
         UIImage* closeImage = [UIImage imageNamed:@"FBDialog.bundle/images/close.png"];
         
@@ -408,8 +416,10 @@ static BOOL FBIsDeviceIPad() {
         UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin
         | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         [self addSubview:_spinner];
-        
-        
+/*
+        [_spinner stopAnimating];
+        _spinner.hidden = YES;
+*/
         _modalBackgroundView = [[UIView alloc] init];
     }
     return self;
@@ -526,7 +536,6 @@ static BOOL FBIsDeviceIPad() {
                                 self.frame.size.height - (1 + kBorderWidth*2));
     
     [_spinner sizeToFit];
-    [_spinner startAnimating];
     _spinner.center = _containerView.center;
     
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
