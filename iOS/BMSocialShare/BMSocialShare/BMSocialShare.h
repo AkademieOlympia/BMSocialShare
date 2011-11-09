@@ -13,11 +13,12 @@
 #import <Twitter/Twitter.h>
 #import "FBConnect.h"
 #import "BMFacebookPost.h"
+#import "BMDialog.h"
 
 
 
 
-@interface BMSocialShare : NSObject <FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, MFMailComposeViewControllerDelegate> {
+@interface BMSocialShare : NSObject <FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, MFMailComposeViewControllerDelegate, BMDialogDelegate> {
     int _currentAPICall;
     Facebook *_facebook;
     NSString *_appId;

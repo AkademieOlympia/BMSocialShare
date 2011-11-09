@@ -26,7 +26,7 @@ typedef enum facebookPostType {
 
 @property (nonatomic, readonly) NSMutableDictionary *params;
 @property (nonatomic, readonly) facebookPostType type;
-
+@property (nonatomic, readonly) UIImage *image;
 
 
 /**

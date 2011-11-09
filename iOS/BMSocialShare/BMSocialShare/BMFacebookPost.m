@@ -10,7 +10,7 @@
 
 @implementation BMFacebookPost
 
-@synthesize type = _type;
+@synthesize type = _type, image = _image;
 
 
 - (id)initWithTitle:(NSString *)title descriptionText:(NSString *)description andHref:(NSString *)href {

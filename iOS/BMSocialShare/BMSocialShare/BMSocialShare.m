@@ -8,6 +8,8 @@
 //
 
 #import "BMSocialShare.h"
+#import "BMShareViewController.h"
+
 
 
 #define kFacebookPostParams @"FacebookPostParams"
@@ -189,6 +191,10 @@ typedef enum apiCall {
  */
 - (void)facebookPublish:(BMFacebookPost *)post {
     
+    
+    
+#if !TARGET_IPHONE_SIMULATOR
+
     if (!_facebook.isSessionValid) {
         
         // store the last facebook post parameters before we switch to the facebook app or safari
@@ -201,14 +207,30 @@ typedef enum apiCall {
         return;
     }
     
+#endif
          
     switch (post.type) {
             
         case kPostImage:
+        {
+            
+            BMDialog *diaolog = [[BMDialog alloc] initWithFacebookPost:post delegate:self];
+            [diaolog show];
+            
+            
+/*            
+            BMShareViewController *shareViewController = [[[BMShareViewController alloc] init] autorelease];
+            shareViewController.postImageOverlayView
+*/
+            
+            
+/*
             [_facebook requestWithGraphPath:@"me/photos"
                                   andParams:post.params
                               andHttpMethod:@"POST"
                                 andDelegate:self];
+*/
+        }
             break;
             
         default:
