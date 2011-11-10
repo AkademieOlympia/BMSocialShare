@@ -357,8 +357,8 @@ static BOOL FBIsDeviceIPad() {
         [_containerView addSubview:_textField];
 
         
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 115, _containerView.frame.size.height - 125, _containerView.frame.size.width - 40)];
-        _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 115, _containerView.frame.size.width - 40, _containerView.frame.size.height - 125)];
+        _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [_containerView addSubview:_imageView];
                 
