@@ -44,6 +44,7 @@
 
 /* Email */
 -(void)emailPublishText:(NSString *)text
+                 isHTML:(BOOL)isHTML
             withSubject:(NSString *)subject
               withImage:(NSString *)imagePath 
  inParentViewController:(UIViewController *)parentViewController;

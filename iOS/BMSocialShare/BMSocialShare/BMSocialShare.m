@@ -450,6 +450,7 @@ typedef enum apiCall {
 
 
 -(void)emailPublishText:(NSString *)text
+                 isHTML:(BOOL)isHTML
             withSubject:(NSString *)subject
               withImage:(NSString *)imagePath 
  inParentViewController:(UIViewController *)parentViewController {
@@ -482,7 +483,7 @@ typedef enum apiCall {
         }
 
         if (text) {
-            [picker setMessageBody:text isHTML:NO];
+            [picker setMessageBody:text isHTML:isHTML];
         }
         
         if (imagePath) {
