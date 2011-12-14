@@ -166,7 +166,7 @@ typedef enum apiCall {
 - (void)facebookPermissions:(NSArray *)permissions {
     
     if (_facebook == nil && _appId != nil) {
-        _facebook = [[Facebook alloc] initWithAppId:_appId andDelegate:self];
+        _facebook = [[[Facebook alloc] initWithAppId:_appId andDelegate:self] retain];
         
         // try to load previous sessions
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
