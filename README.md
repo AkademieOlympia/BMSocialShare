@@ -10,7 +10,8 @@
 
 1. Download the [framework](https://github.com/downloads/blockhaus/BMSocialShare/BMSocialShare.framework_v0.1.zip)!
 1. Drag'n Drop the `BMSocialShare.framework` folder into your Xcode project
-1. No other frameworks needed
+1. Add `MessageUI.framework` for Email to work
+1. Add `Twitter.framework` for Twitter to work
 
 
 ## Facebook
