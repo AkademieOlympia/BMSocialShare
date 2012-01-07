@@ -49,21 +49,21 @@
 
 ```objective-c
     BMFacebookPost *post = [[BMFacebookPost alloc] 
-                            initWithTitle:@"BMSocialShare" 
-                            descriptionText:@"Simple sharing via Facebook, Email and Twitter for iOS!"
-                            andHref:@"https://github.com/blockhaus/BMSocialShare"];
+                            initWithTitle:@"Simple sharing via Facebook, Email and Twitter for iOS!" 
+                            descriptionText:@"Posting to Facebook, Twitter and Email made dead simple on iOS. Simply include BMSocialShare as a framework and you are ready to go." 
+                            andHref:@"https://github.com/blockhaus/BMSocialShare"];    
     
-    [post setImageUrl:@"https://github.com/blockhaus/BMSocialShare/raw/documentation/header.png" 
-             withHref:@"https://github.com/blockhaus/BMSocialShare"];
+    [post setImageUrl:@"http://www.blockhausmedien.at/images/logo-new.gif" 
+             withHref:@"http://www.blockhaus-media.com"];
     
-    [post addPropertyWithTitle:@"" 
-               descriptionText:@""
-                       andHref:@""];
+    [post addPropertyWithTitle:@"Download" 
+               descriptionText:@"github.com/blockhaus/BMSocialShare" 
+                       andHref:@"http://github.com/blockhaus/BMSocialShare"];
     
-    [post addPropertyWithTitle:@""
-               descriptionText:@""
-                       andHref:@""];
-    
+    [post addPropertyWithTitle:@"Developed by" 
+               descriptionText:@"blockhaus" 
+                       andHref:@"http://www.blockhaus-media.com"];
+
     [[BMSocialShare sharedInstance] facebookPublish:post];
 ```
 
@@ -73,19 +73,21 @@
 So far only iOS5+ is supported!
 
 ```objective-c
-    [[BMSocialShare sharedInstance] twitterPublishText:@"Simple sharing via Facebook, Email and Twitter for iOS!"
+    [[BMSocialShare sharedInstance] twitterPublishText:@"Posting to Facebook, Twitter and Email made dead simple on iOS with BMSocialShare"
                                              withImage:nil
-                                                andURL:[NSURL URLWithString:@"https://github.com/blockhaus/BMSocialShare"] 
+                                                andURL:[NSURL URLWithString:@"http://github.com/blockhaus/BMSocialShare"]
                                 inParentViewController:self];
 ```
 
 ## EMail
 
 ```objective-c
-    [[BMSocialShare sharedInstance] emailPublishText:@"<bold>Simple sharing via Facebook, Email and Twitter for iOS!</bold>"
+    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"blockhaus" ofType:@"png"];
+        
+    [[BMSocialShare sharedInstance] emailPublishText:@"Posting to Facebook, Twitter and Email made dead simple on iOS. Simply include BMSocialShare as a framework and you are ready to go.\nhttp://github.com/blockhaus/BMSocialShare"
                                               isHTML:YES
-                                         withSubject:@"BMSocialShare"
-                                           withImage:nil
+                                         withSubject:@"Simple sharing with BMSocialShare"
+                                           withImage:storePath 
                               inParentViewController:self];
 ```
 
