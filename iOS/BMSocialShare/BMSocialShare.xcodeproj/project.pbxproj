@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BC7F2E8114B86CD800DA9B6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2E8014B86CD800DA9B6D /* UIKit.framework */; };
+		BC7F2EAB14B886E400DA9B6D /* BMDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7F2EA914B886E400DA9B6D /* BMDialog.m */; };
+		BC7F2EAC14B886E400DA9B6D /* BMDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7F2EAA14B886E400DA9B6D /* BMDialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC7F2EB014B8877700DA9B6D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2EAF14B8877700DA9B6D /* Twitter.framework */; };
+		BC7F2EB214B8878500DA9B6D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2EB114B8878500DA9B6D /* MessageUI.framework */; };
 		BC8712C114656E03007DF497 /* BMFacebookPost.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8712BF14656E03007DF497 /* BMFacebookPost.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC8712C214656E03007DF497 /* BMFacebookPost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8712C014656E03007DF497 /* BMFacebookPost.m */; };
 		BC8712F71465DF0F007DF497 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65080146428B200D10C93 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		BC7F2E8014B86CD800DA9B6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC7F2EA914B886E400DA9B6D /* BMDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDialog.m; sourceTree = "<group>"; };
+		BC7F2EAA14B886E400DA9B6D /* BMDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDialog.h; sourceTree = "<group>"; };
+		BC7F2EAF14B8877700DA9B6D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		BC7F2EB114B8878500DA9B6D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BC8712BF14656E03007DF497 /* BMFacebookPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFacebookPost.h; sourceTree = "<group>"; };
 		BC8712C014656E03007DF497 /* BMFacebookPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMFacebookPost.m; sourceTree = "<group>"; };
 		BCD65061146426C800D10C93 /* BMSocialShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMSocialShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7F2EB214B8878500DA9B6D /* MessageUI.framework in Frameworks */,
+				BC7F2EB014B8877700DA9B6D /* Twitter.framework in Frameworks */,
 				BC7F2E8114B86CD800DA9B6D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,13 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC7F2EAE14B8875800DA9B6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC7F2EB114B8878500DA9B6D /* MessageUI.framework */,
+				BC7F2EAF14B8877700DA9B6D /* Twitter.framework */,
+				BC7F2E8014B86CD800DA9B6D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BCD65053146426C700D10C93 = {
 			isa = PBXGroup;
 			children = (
-				BC7F2E8014B86CD800DA9B6D /* UIKit.framework */,
 				BCD6507E146428A200D10C93 /* Facebook */,
 				BCD65063146426C800D10C93 /* BMSocialShare */,
 				BCD65064146426C800D10C93 /* Supporting Files */,
+				BC7F2EAE14B8875800DA9B6D /* Frameworks */,
 				BCD65062146426C800D10C93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,6 +127,8 @@
 			children = (
 				BC8712BF14656E03007DF497 /* BMFacebookPost.h */,
 				BC8712C014656E03007DF497 /* BMFacebookPost.m */,
+				BC7F2EA914B886E400DA9B6D /* BMDialog.m */,
+				BC7F2EAA14B886E400DA9B6D /* BMDialog.h */,
 				BCD650701464271E00D10C93 /* BMSocialShare.h */,
 				BCD6506F1464271E00D10C93 /* BMSocialShare.m */,
 			);
@@ -170,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD650721464271E00D10C93 /* BMSocialShare.h in Headers */,
+				BC7F2EAC14B886E400DA9B6D /* BMDialog.h in Headers */,
 				BC8712C114656E03007DF497 /* BMFacebookPost.h in Headers */,
 				BC8712F71465DF0F007DF497 /* JSON.h in Headers */,
 				BC8712F81465DF0F007DF497 /* NSObject+SBJSON.h in Headers */,
@@ -292,6 +315,7 @@
 				BCD650A7146428B200D10C93 /* FBLoginDialog.m in Sources */,
 				BCD650A8146428B200D10C93 /* FBRequest.m in Sources */,
 				BC8712C214656E03007DF497 /* BMFacebookPost.m in Sources */,
+				BC7F2EAB14B886E400DA9B6D /* BMDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
