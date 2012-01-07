@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC7F2E8114B86CD800DA9B6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2E8014B86CD800DA9B6D /* UIKit.framework */; };
 		BC8712C114656E03007DF497 /* BMFacebookPost.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8712BF14656E03007DF497 /* BMFacebookPost.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC8712C214656E03007DF497 /* BMFacebookPost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8712C014656E03007DF497 /* BMFacebookPost.m */; };
 		BC8712F71465DF0F007DF497 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD65080146428B200D10C93 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC7F2E8014B86CD800DA9B6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BC8712BF14656E03007DF497 /* BMFacebookPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFacebookPost.h; sourceTree = "<group>"; };
 		BC8712C014656E03007DF497 /* BMFacebookPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMFacebookPost.m; sourceTree = "<group>"; };
 		BCD65061146426C800D10C93 /* BMSocialShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMSocialShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7F2E8114B86CD800DA9B6D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 		BCD65053146426C700D10C93 = {
 			isa = PBXGroup;
 			children = (
+				BC7F2E8014B86CD800DA9B6D /* UIKit.framework */,
 				BCD6507E146428A200D10C93 /* Facebook */,
 				BCD65063146426C800D10C93 /* BMSocialShare */,
 				BCD65064146426C800D10C93 /* Supporting Files */,
