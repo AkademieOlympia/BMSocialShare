@@ -76,7 +76,7 @@ So far only iOS5+ is supported!
 ```
     [[BMSocialShare sharedInstance] twitterPublishText:@"Simple sharing via Facebook, Email and Twitter for iOS!"
                                              withImage:nil
-                                                andURL:[NSURL URLWithString:@""] 
+                                                andURL:[NSURL URLWithString:@"https://github.com/blockhaus/BMSocialShare"] 
                                 inParentViewController:self];
 ```
 
@@ -91,8 +91,7 @@ So far only iOS5+ is supported!
 ```
 
 
-Third Party
----------
+## Third Party
 
 * This framework was created based on https://github.com/kstenerud/iOS-Universal-Framework.
 * Graphics in the Examples were taken from http://365psd.com/day/240/ and http://subtlepatterns.com/
