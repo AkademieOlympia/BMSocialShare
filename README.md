@@ -13,9 +13,14 @@ Why?
 
 For most Apps we develop there are only two things we need to do mainly:
 1. Share a post on Facebook or Twitter with an image and a comment by the user. Same via Email.
-2. We need to share the AppStore or Android Market link for the App.
+1. We need to share the AppStore or Android Market link for the App.
 
 All other sharing libraries come with loads of parameteres we never needed.
+
+Quick Start
+---
+1. Download the [framework][https://github.com/downloads/blockhaus/BMSocialShare/BMSocialShare.framework_v0.1.zip]!
+1. 
 
 
 Facebook
@@ -53,16 +58,16 @@ Facebook
 Twitter
 -------
 
-2. Integrate `Twitter.framework``
+2. Integrate `Twitter.framework`
 
 
 For iOS5 the integrated `TWTweetComposeViewController` is used.
-
+```
     [[BMSocialShare sharedInstance] twitterPublishText:@"Some text to tweet" 
                                              withImage:nil 
                                                 andURL:nil 
                                 inParentViewController:self];
-
+```
 
 EMail
 -----
