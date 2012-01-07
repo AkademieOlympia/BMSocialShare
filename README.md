@@ -41,7 +41,7 @@
 
 ```objective-c
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-        return [[BMSocialShare sharedInstance] handleOpenURL:url];
+        return [[BMSocialShare sharedInstance] facebookHandleOpenURL:url];
     }
 ```
 
