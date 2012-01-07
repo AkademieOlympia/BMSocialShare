@@ -1,7 +1,5 @@
 # BMSocialShare
 
-Posting to Facebook, Twitter and Email made dead simple on iOS.
-
 1. Post to Facebook or Twitter with an image and a comment by the user. Same via Email.
 1. Share the AppStore or Android Market link for your App.
 
@@ -18,11 +16,11 @@ Posting to Facebook, Twitter and Email made dead simple on iOS.
 ## Facebook
 
 1. Create an App on Facebook http://developers.facebook.com/apps
-1. Copy your Facebook APP ID
-1. In Xcode right click on your plist, choose `Open As -> Source Code`
-1. Insert the following snippet with your own Facebook APP ID:
+2. Copy your Facebook APP ID
+3. In Xcode right click on your `Info.plist`, choose `Open As -> Source Code`
+4. Insert the following snippet with your own Facebook APP ID:
 
-```
+```xml
     <key>CFBundleURLTypes</key>
     <array>
     <dict>
@@ -36,19 +34,19 @@ Posting to Facebook, Twitter and Email made dead simple on iOS.
     </array>
 ```
 
-1. Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
+5. Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
 
-1. Overwrite `handleOpenURL` in your AppDelegate for SSO to work. More info can be found on https://developers.facebook.com/docs/mobile/ios/build/#implementsso
+6. Overwrite `handleOpenURL` in your `AppDelegate.m`
 
-```
+```objective-c
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
         return [[BMSocialShare sharedInstance] handleOpenURL:url];
     }
 ```
 
-1. Post to Facebook:
+7. Post to Facebook:
 
-```
+```objective-c
     BMFacebookPost *post = [[BMFacebookPost alloc] 
                             initWithTitle:@"BMSocialShare" 
                             descriptionText:@"Simple sharing via Facebook, Email and Twitter for iOS!"
@@ -73,7 +71,7 @@ Posting to Facebook, Twitter and Email made dead simple on iOS.
 
 So far only iOS5+ is supported!
 
-```
+```objective-c
     [[BMSocialShare sharedInstance] twitterPublishText:@"Simple sharing via Facebook, Email and Twitter for iOS!"
                                              withImage:nil
                                                 andURL:[NSURL URLWithString:@"https://github.com/blockhaus/BMSocialShare"] 
@@ -82,7 +80,7 @@ So far only iOS5+ is supported!
 
 ## EMail
 
-```
+```objective-c
     [[BMSocialShare sharedInstance] emailPublishText:@"<bold>Simple sharing via Facebook, Email and Twitter for iOS!</bold>"
                                               isHTML:YES
                                          withSubject:@"BMSocialShare"
