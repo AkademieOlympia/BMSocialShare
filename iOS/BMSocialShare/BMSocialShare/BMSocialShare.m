@@ -166,7 +166,7 @@ typedef enum apiCall {
 - (void)facebookPermissions:(NSArray *)permissions {
     
     if (_facebook == nil && _appId != nil) {
-        _facebook = [[Facebook alloc] initWithAppId:_appId andDelegate:self];
+        _facebook = [[[Facebook alloc] initWithAppId:_appId andDelegate:self] retain];
         
         // try to load previous sessions
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -450,6 +450,7 @@ typedef enum apiCall {
 
 
 -(void)emailPublishText:(NSString *)text
+                 isHTML:(BOOL)isHTML
             withSubject:(NSString *)subject
               withImage:(NSString *)imagePath 
  inParentViewController:(UIViewController *)parentViewController {
@@ -482,7 +483,7 @@ typedef enum apiCall {
         }
 
         if (text) {
-            [picker setMessageBody:text isHTML:NO];
+            [picker setMessageBody:text isHTML:isHTML];
         }
         
         if (imagePath) {
