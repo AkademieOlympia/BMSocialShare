@@ -2,14 +2,17 @@
 
 1. Post to Facebook or Twitter with an image and a comment by the user. Same via Email.
 1. Share the AppStore or Android Market link for your App.
+1. **NEW** Share an image on Facebook in full size by adding it to a photo album.
 
 ![Facebook iPhone](https://github.com/blockhaus/BMSocialShare/raw/documentation/header.png)
 
 
 ## Installation
 
-1. Download the [framework](https://github.com/downloads/blockhaus/BMSocialShare/BMSocialShare.framework_v0.2.zip)!
-1. Drag'n Drop the `BMSocialShare.framework` folder into your Xcode project
+1. To get BMSocialShare do either
+  * Download the [framework](https://github.com/downloads/blockhaus/BMSocialShare/BMSocialShare.framework_v0.2.zip)!
+  * In your git repository's root folder do `git submodule add git@github.com:blockhaus/BMSocialShare.git`
+1. Drag'n drop the `BMSocialShare.framework` folder into your Xcode project
 1. Add `MessageUI.framework` for Email to work
 1. Add `Twitter.framework` for Twitter to work
 
@@ -17,9 +20,9 @@
 ## Facebook
 
 1. Create an App on Facebook http://developers.facebook.com/apps
-2. Copy your Facebook APP ID
-3. In Xcode right click on your `Info.plist`, choose `Open As -> Source Code`
-4. Insert the following snippet with your own Facebook APP ID:
+1. Copy your Facebook APP ID
+1. In Xcode right click on your `Info.plist`, choose `Open As -> Source Code`
+1. Insert the following snippet with your own Facebook APP ID:
 
 ```xml
     <key>CFBundleURLTypes</key>
@@ -35,9 +38,8 @@
     </array>
 ```
 
-5. Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
-
-6. Overwrite `handleOpenURL` in your `AppDelegate.m`
+1. Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
+1. Overwrite `handleOpenURL` in your `AppDelegate.m`
 
 ```objective-c
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
@@ -45,7 +47,7 @@
     }
 ```
 
-7. Post to Facebook:
+1. Post to Facebook:
 
 ```objective-c
     BMFacebookPost *post = [[BMFacebookPost alloc] 
@@ -64,6 +66,13 @@
                descriptionText:@"blockhaus" 
                        andHref:@"http://www.blockhaus-media.com"];
 
+    [[BMSocialShare sharedInstance] facebookPublish:post];
+```
+
+1. Or share an image in full size:
+
+```objective-c
+    BMFacebookPost *post = [[BMFacebookPost alloc] initWithImage:[UIImage imageNamed:@"image.png"]];
     [[BMSocialShare sharedInstance] facebookPublish:post];
 ```
 
@@ -90,6 +99,12 @@ So far only iOS5+ is supported!
                                            withImage:storePath 
                               inParentViewController:self];
 ```
+
+## Apps using BMSocialShare
+
+* [DOTZ Tuning Wheels Configurator](http://itunes.apple.com/app/id403985530)
+* [Dotz Tuning Wheels Configurator HD](http://itunes.apple.com/app/id436998470)
+* [AEZ Magazine](http://itunes.apple.com/app/id480123902)
 
 
 ## Third Party
