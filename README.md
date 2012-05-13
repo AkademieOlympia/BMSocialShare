@@ -45,6 +45,11 @@
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
         return [[BMSocialShare sharedInstance] facebookHandleOpenURL:url];
     }
+    
+    // for iOS > 4.2 make sure you use
+    - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+        return [[BMSocialShare sharedInstance] facebookHandleOpenURL:url];
+    }
 ```
 
 1. Post to Facebook:
