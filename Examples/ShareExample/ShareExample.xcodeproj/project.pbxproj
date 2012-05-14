@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC7F2EA214B880A500DA9B6D /* BMSocialShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2EA114B880A500DA9B6D /* BMSocialShare.framework */; };
+		BC2AD26315610A0400CF82F8 /* BMSocialShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2AD26215610A0400CF82F8 /* BMSocialShare.framework */; };
 		BC8712D4146575F7007DF497 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8712D3146575F7007DF497 /* UIKit.framework */; };
 		BC8712D6146575F7007DF497 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8712D5146575F7007DF497 /* Foundation.framework */; };
 		BC8712D8146575F7007DF497 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8712D7146575F7007DF497 /* CoreGraphics.framework */; };
@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC7F2EA114B880A500DA9B6D /* BMSocialShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSocialShare.framework; path = ../../iOS/Binary/BMSocialShare.framework; sourceTree = "<group>"; };
+		BC2AD26215610A0400CF82F8 /* BMSocialShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSocialShare.framework; path = ../../iOS/Binary/BMSocialShare.framework; sourceTree = "<group>"; };
 		BC8712CF146575F7007DF497 /* ShareExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC8712D3146575F7007DF497 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BC8712D5146575F7007DF497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,7 +67,7 @@
 				BC8712D4146575F7007DF497 /* UIKit.framework in Frameworks */,
 				BC8712D6146575F7007DF497 /* Foundation.framework in Frameworks */,
 				BC8712D8146575F7007DF497 /* CoreGraphics.framework in Frameworks */,
-				BC7F2EA214B880A500DA9B6D /* BMSocialShare.framework in Frameworks */,
+				BC2AD26315610A0400CF82F8 /* BMSocialShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 		BC8712D2146575F7007DF497 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC7F2EA114B880A500DA9B6D /* BMSocialShare.framework */,
+				BC2AD26215610A0400CF82F8 /* BMSocialShare.framework */,
 				BC8712F314657698007DF497 /* Twitter.framework */,
 				BC8713031465DFAB007DF497 /* MessageUI.framework */,
 				BC8712D3146575F7007DF497 /* UIKit.framework */,
