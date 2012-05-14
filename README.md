@@ -20,11 +20,11 @@
 1. In your git repository's root folder do `git submodule add git@github.com:blockhaus/BMSocialShare.git`
 1. Afterwards download all submodules `git submodule update --init --recursive`
 
-![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_0.png)
-![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_1.png)
-![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_2.png)
-![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_3.png)
-![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_4.png)
+![Xcode screenshot](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_0.png)
+![Xcode screenshot](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_1.png)
+![Xcode screenshot](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_2.png)
+![Xcode screenshot](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_3.png)
+![Xcode screenshot](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_4.png)
 
 ## Facebook
 
