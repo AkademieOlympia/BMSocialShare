@@ -60,6 +60,9 @@ typedef enum apiCall {
 @implementation BMSocialShare
 
 
+@synthesize facebook = _facebook;
+@synthesize delegate = _delegate;
+
 
 
 + (BMSocialShare *)sharedInstance
@@ -139,6 +142,34 @@ typedef enum apiCall {
 ////////////////////////////////////////////////////////////////////////////////
 
 
+/**
+ * There is no need to call login if you only want to share stuff.
+ * It is enough to make a call to facebookPublish: !
+ * Login is only provided if you want to provide a button to the user to login or logout actively.
+ */
+- (void)facebookLogin {
+    
+    if (!_facebook.isSessionValid) {
+        [_facebook authorize:_permissions];
+        return;
+    }
+    
+    // let the delegate know we are logged in
+    if ([_delegate respondsToSelector:@selector(facebookDidLogin)]) {
+        [_delegate facebookDidLogin];
+    }
+
+}
+
+/**
+ * Logut from facebook.
+ * You don't actually need to call logout if you don't REALLY want to!
+ */
+- (void)facebookLogout {
+    [self deleteLastPostFromUserDefaults];
+    [_facebook logout];
+}
+
 
 /**
  * For Facebook Single Sign On (SSO) to work, this method needs to be called
@@ -202,10 +233,7 @@ typedef enum apiCall {
  */
 - (void)facebookPublish:(BMFacebookPost *)post {
     
-    
-    
-#if !TARGET_IPHONE_SIMULATOR
-
+    // login to Facebook in case we have no session yet
     if (!_facebook.isSessionValid) {
         
         // store the last facebook post parameters before we switch to the facebook app or safari
@@ -213,12 +241,11 @@ typedef enum apiCall {
         [defaults setObject:post.params forKey:kFacebookPostParams];
         [defaults synchronize];
         
-        [_facebook authorize:_permissions];
+        [self facebookLogin];
         
         return;
     }
     
-#endif
          
     switch (post.type) {
             
@@ -354,6 +381,10 @@ typedef enum apiCall {
         [_facebook dialog:@"stream.publish" andParams:mutableParams andDelegate:self];
     }
     
+    // let the delegate know we are logged in
+    if ([_delegate respondsToSelector:@selector(facebookDidLogin)]) {
+        [_delegate facebookDidLogin];
+    }
 }
 
 /**
