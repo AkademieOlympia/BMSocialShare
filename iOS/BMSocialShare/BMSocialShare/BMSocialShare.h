@@ -33,6 +33,7 @@
 /* Facebook */
 - (BOOL)facebookHandleOpenURL:(NSURL *)url;
 - (void)facebookPublish:(BMFacebookPost *)post;
+- (void)extendAccessTokenIfNeeded;
 
 
 /* Twitter */

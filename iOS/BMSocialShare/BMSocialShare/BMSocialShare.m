@@ -103,7 +103,7 @@ typedef enum apiCall {
         // initialize facebook with default permissions
         if (_appId != nil) {
             NSLog(@"BMSocialShare: Using Facebook APP ID: %@", _appId);
-            [self facebookPermissions:[NSArray arrayWithObjects: @"publish_stream", @"offline_access", nil]];
+            [self facebookPermissions:[NSArray arrayWithObjects: @"publish_stream", nil]];
         }
         
         
@@ -157,6 +157,18 @@ typedef enum apiCall {
 }
 
 
+
+/**
+ * Call from within applicationDidBecomeActive to renew our access token
+ *
+ * - (void)applicationDidBecomeActive:(UIApplication *)application {
+ *   [[BMSocialShare sharedInstance] extendAccessTokenIfNeeded];
+ * }
+ *
+ */
+- (void)extendAccessTokenIfNeeded {
+    [_facebook extendAccessTokenIfNeeded];
+}
 
 
 /**
@@ -360,7 +372,29 @@ typedef enum apiCall {
     [self deleteLastPostFromUserDefaults];
 }
 
+/**
+ * Called when the current session has expired. This might happen when:
+ *  - the access token expired
+ *  - the app has been disabled
+ *  - the user revoked the app's permissions
+ *  - the user changed his or her password
+ */
+- (void)fbSessionInvalidated {
+    NSLog(@"fbSessionInvalidated");
+    // TODO need to do some more research what needs to happen on this event
+    [self deleteLastPostFromUserDefaults];
+}
 
+/**
+ * Instead of using the "offline_access" permission it is now 
+ */
+-(void)fbDidExtendToken:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
+    NSLog(@"token extended");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:accessToken forKey:@"FBAccessTokenKey"];
+    [defaults setObject:expiresAt forKey:@"FBExpirationDateKey"];
+    [defaults synchronize];
+}
 
 
 
