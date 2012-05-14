@@ -39,10 +39,15 @@
     return YES;
 }
 
-
+// for iOS prior 4.2 make sure you use
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     // include this for Single Sign On (SSO) to work
     // https://developers.facebook.com/docs/mobile/ios/build/#implementsso
+    return [[BMSocialShare sharedInstance] facebookHandleOpenURL:url];
+}
+
+// for iOS > 4.2 make sure you use
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     return [[BMSocialShare sharedInstance] facebookHandleOpenURL:url];
 }
 
