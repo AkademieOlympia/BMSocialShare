@@ -193,11 +193,11 @@ typedef enum apiCall {
  * Call from within applicationDidBecomeActive to renew our access token
  *
  * - (void)applicationDidBecomeActive:(UIApplication *)application {
- *   [[BMSocialShare sharedInstance] extendAccessTokenIfNeeded];
+ *   [[BMSocialShare sharedInstance] facebookExendAccessToken];
  * }
  *
  */
-- (void)extendAccessTokenIfNeeded {
+- (void)facebookExendAccessToken {
     [_facebook extendAccessTokenIfNeeded];
 }
 

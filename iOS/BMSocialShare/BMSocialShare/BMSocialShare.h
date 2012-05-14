@@ -51,7 +51,7 @@
 - (void)facebookLogout;
 - (BOOL)facebookHandleOpenURL:(NSURL *)url;
 - (void)facebookPublish:(BMFacebookPost *)post;
-- (void)extendAccessTokenIfNeeded;
+- (void)facebookExendAccessToken;
 
 
 /* Twitter */

@@ -17,8 +17,21 @@
 
 
 
+@protocol BMSocialShareDelegate <NSObject>
+
+@optional
+
+/**
+ * Called once Facebook finished logging in.
+ */
+- (void)facebookDidLogin;
+
+@end
+
+
 
 @interface BMSocialShare : NSObject <FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, MFMailComposeViewControllerDelegate, BMDialogDelegate> {
+    id <BMSocialShareDelegate> _delegate;
     int _currentAPICall;
     Facebook *_facebook;
     NSString *_appId;
@@ -27,12 +40,18 @@
 }
 
 
+@property (nonatomic, readonly) Facebook *facebook;
+@property (nonatomic, assign) id <BMSocialShareDelegate> delegate;
+
 + (BMSocialShare *) sharedInstance;
 
 
 /* Facebook */
+- (void)facebookLogin;
+- (void)facebookLogout;
 - (BOOL)facebookHandleOpenURL:(NSURL *)url;
 - (void)facebookPublish:(BMFacebookPost *)post;
+- (void)facebookExendAccessToken;
 
 
 /* Twitter */
