@@ -72,6 +72,14 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    
+    /*
+     THIS CALL IS ESSENTIAL TO KEEP ACCESS TO FACEBOOK!
+     MAKE SURE YOU IMPLEMENT IT IN YOUR OWN APP! ;)
+     */
+    [[BMSocialShare sharedInstance] facebookExendAccessToken];
+    
+    
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
