@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC2AD26315610A0400CF82F8 /* BMSocialShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2AD26215610A0400CF82F8 /* BMSocialShare.framework */; };
 		BC2AD2791561112000CF82F8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD2781561112000CF82F8 /* Icon.png */; };
 		BC2AD27B1561112200CF82F8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD27A1561112200CF82F8 /* Icon@2x.png */; };
 		BC2AD285156111ED00CF82F8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD27C156111ED00CF82F8 /* Default.png */; };
@@ -16,8 +15,6 @@
 		BC2AD288156111ED00CF82F8 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD27F156111ED00CF82F8 /* Icon-Small-50.png */; };
 		BC2AD289156111ED00CF82F8 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD280156111ED00CF82F8 /* Icon-Small.png */; };
 		BC2AD28A156111ED00CF82F8 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD281156111ED00CF82F8 /* Icon-Small@2x.png */; };
-		BC2AD28B156111ED00CF82F8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD282156111ED00CF82F8 /* Icon.png */; };
-		BC2AD28C156111ED00CF82F8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD283156111ED00CF82F8 /* Icon@2x.png */; };
 		BC2AD28D156111ED00CF82F8 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD284156111ED00CF82F8 /* iTunesArtwork */; };
 		BC2AD290156113CA00CF82F8 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD28F156113CA00CF82F8 /* Default-Portrait~ipad.png */; };
 		BC8712D4146575F7007DF497 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8712D3146575F7007DF497 /* UIKit.framework */; };
@@ -39,10 +36,34 @@
 		BCC5E4E81466D7FC00AC08F5 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E51466D7FC00AC08F5 /* background.png */; };
 		BCC5E4E91466D7FC00AC08F5 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E61466D7FC00AC08F5 /* background@2x.png */; };
 		BCC5E4EA1466D7FC00AC08F5 /* background~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC5E4E71466D7FC00AC08F5 /* background~ipad.png */; };
+		BCC9AFEC15616D87006C8F09 /* libBMSocialShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2AD32815613BF800CF82F8 /* libBMSocialShare.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BC2AD32715613BF800CF82F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC2AD32015613BF800CF82F8 /* BMSocialShare.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC2AD31515613B8800CF82F8;
+			remoteInfo = BMSocialShare;
+		};
+		BC2AD32915613C0E00CF82F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC2AD32015613BF800CF82F8 /* BMSocialShare.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC2AD31415613B8800CF82F8;
+			remoteInfo = BMSocialShare;
+		};
+		BCC9B06C15617CD2006C8F09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC2AD32015613BF800CF82F8 /* BMSocialShare.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC9B0381561766D006C8F09;
+			remoteInfo = BMSocialShareFramework;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		BC2AD26215610A0400CF82F8 /* BMSocialShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSocialShare.framework; path = ../../iOS/Binary/BMSocialShare.framework; sourceTree = "<group>"; };
 		BC2AD2781561112000CF82F8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BC2AD27A1561112200CF82F8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		BC2AD27C156111ED00CF82F8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -55,6 +76,7 @@
 		BC2AD283156111ED00CF82F8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		BC2AD284156111ED00CF82F8 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		BC2AD28F156113CA00CF82F8 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		BC2AD32015613BF800CF82F8 /* BMSocialShare.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BMSocialShare.xcodeproj; path = ../../iOS/BMSocialShare/BMSocialShare.xcodeproj; sourceTree = "<group>"; };
 		BC8712CF146575F7007DF497 /* ShareExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC8712D3146575F7007DF497 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BC8712D5146575F7007DF497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,12 +108,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC9AFEC15616D87006C8F09 /* libBMSocialShare.a in Frameworks */,
 				BC8713041465DFAB007DF497 /* MessageUI.framework in Frameworks */,
 				BC8712F414657698007DF497 /* Twitter.framework in Frameworks */,
 				BC8712D4146575F7007DF497 /* UIKit.framework in Frameworks */,
 				BC8712D6146575F7007DF497 /* Foundation.framework in Frameworks */,
 				BC8712D8146575F7007DF497 /* CoreGraphics.framework in Frameworks */,
-				BC2AD26315610A0400CF82F8 /* BMSocialShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +140,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		BC2AD32115613BF800CF82F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC2AD32815613BF800CF82F8 /* libBMSocialShare.a */,
+				BCC9B06D15617CD2006C8F09 /* BMSocialShare.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BC8712C4146575F7007DF497 = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +169,7 @@
 		BC8712D2146575F7007DF497 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC2AD26215610A0400CF82F8 /* BMSocialShare.framework */,
+				BC2AD32015613BF800CF82F8 /* BMSocialShare.xcodeproj */,
 				BC8712F314657698007DF497 /* Twitter.framework */,
 				BC8713031465DFAB007DF497 /* MessageUI.framework */,
 				BC8712D3146575F7007DF497 /* UIKit.framework */,
@@ -204,6 +235,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BC2AD32A15613C0E00CF82F8 /* PBXTargetDependency */,
 			);
 			name = ShareExample;
 			productName = ShareExample;
@@ -216,7 +248,7 @@
 		BC8712C6146575F7007DF497 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Blockhaus Medienagentur";
 			};
 			buildConfigurationList = BC8712C9146575F7007DF497 /* Build configuration list for PBXProject "ShareExample" */;
@@ -229,12 +261,35 @@
 			mainGroup = BC8712C4146575F7007DF497;
 			productRefGroup = BC8712D0146575F7007DF497 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BC2AD32115613BF800CF82F8 /* Products */;
+					ProjectRef = BC2AD32015613BF800CF82F8 /* BMSocialShare.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BC8712CE146575F7007DF497 /* ShareExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BC2AD32815613BF800CF82F8 /* libBMSocialShare.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBMSocialShare.a;
+			remoteRef = BC2AD32715613BF800CF82F8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCC9B06D15617CD2006C8F09 /* BMSocialShare.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BMSocialShare.framework;
+			remoteRef = BCC9B06C15617CD2006C8F09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BC8712CD146575F7007DF497 /* Resources */ = {
@@ -260,8 +315,6 @@
 				BC2AD288156111ED00CF82F8 /* Icon-Small-50.png in Resources */,
 				BC2AD289156111ED00CF82F8 /* Icon-Small.png in Resources */,
 				BC2AD28A156111ED00CF82F8 /* Icon-Small@2x.png in Resources */,
-				BC2AD28B156111ED00CF82F8 /* Icon.png in Resources */,
-				BC2AD28C156111ED00CF82F8 /* Icon@2x.png in Resources */,
 				BC2AD28D156111ED00CF82F8 /* iTunesArtwork in Resources */,
 				BC2AD290156113CA00CF82F8 /* Default-Portrait~ipad.png in Resources */,
 			);
@@ -282,6 +335,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BC2AD32A15613C0E00CF82F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BMSocialShare;
+			targetProxy = BC2AD32915613C0E00CF82F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BC8712E8146575F7007DF497 /* BMViewController.xib */ = {
 			isa = PBXVariantGroup;
@@ -297,7 +358,6 @@
 		BC8712EE146575F7007DF497 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -322,7 +382,6 @@
 		BC8712EF146575F7007DF497 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -342,15 +401,22 @@
 		BC8712F1146575F7007DF497 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../../Library/Developer/Xcode/DerivedData/BMSocialShare-gedvbinixmfywidbwutkdxrdvdzo/Build/Products/Debug-iphoneos\"",
-					"\"$(SRCROOT)/../../iOS/Binary\"",
+				ARCHS = (
+					armv7,
+					armv6,
 				);
+				CODE_SIGN_ENTITLEMENTS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareExample/ShareExample-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"";
 				INFOPLIST_FILE = "ShareExample/ShareExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -359,15 +425,22 @@
 		BC8712F2146575F7007DF497 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../../Library/Developer/Xcode/DerivedData/BMSocialShare-gedvbinixmfywidbwutkdxrdvdzo/Build/Products/Debug-iphoneos\"",
-					"\"$(SRCROOT)/../../iOS/Binary\"",
+				ARCHS = (
+					armv7,
+					armv6,
 				);
+				CODE_SIGN_ENTITLEMENTS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareExample/ShareExample-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"";
 				INFOPLIST_FILE = "ShareExample/ShareExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
