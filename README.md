@@ -11,7 +11,9 @@
 
 1. To get BMSocialShare do either
   * Download the [framework](https://github.com/downloads/blockhaus/BMSocialShare/BMSocialShare.framework_v0.2.zip)!
+  * **OR**
   * In your git repository's root folder do `git submodule add git@github.com:blockhaus/BMSocialShare.git`
+  * Afterwards download all submodules `git submodule update --init --recursive`
 1. Drag'n drop the `BMSocialShare.framework` folder into your Xcode project
 1. Add `MessageUI.framework` for Email to work
 1. Add `Twitter.framework` for Twitter to work
