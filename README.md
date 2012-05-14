@@ -7,24 +7,31 @@
 ![Facebook iPhone](https://github.com/blockhaus/BMSocialShare/raw/documentation/header.png)
 
 
-## Installation
+## Install Framework version
 
-1. To get BMSocialShare do either
-  * Download the [framework](https://github.com/downloads/blockhaus/BMSocialShare/BMSocialShare.framework_v0.2.zip)!
-  * **OR**
-  * In your git repository's root folder do `git submodule add git@github.com:blockhaus/BMSocialShare.git`
-  * Afterwards download all submodules `git submodule update --init --recursive`
+1. Download the [framework](https://github.com/downloads/blockhaus/BMSocialShare/BMSocialShare.framework_v0.2.zip)!
 1. Drag'n drop the `BMSocialShare.framework` folder into your Xcode project
 1. Add `MessageUI.framework` for Email to work
 1. Add `Twitter.framework` for Twitter to work
 
 
+## Install Static Library version
+
+1. In your git repository's root folder do `git submodule add git@github.com:blockhaus/BMSocialShare.git`
+1. Afterwards download all submodules `git submodule update --init --recursive`
+
+![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_0.png)
+![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_1.png)
+![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_2.png)
+![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_3.png)
+![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_4.png)
+
 ## Facebook
 
-1) Create an App on Facebook http://developers.facebook.com/apps
-2) Copy your Facebook APP ID
-3) In Xcode right click on your `Info.plist`, choose `Open As -> Source Code`
-4) Insert the following snippet with your own Facebook APP ID:
+1. Create an App on Facebook http://developers.facebook.com/apps
+1. Copy your Facebook APP ID
+1. In Xcode right click on your `Info.plist`, choose `Open As -> Source Code`
+1. Insert the following snippet with your own Facebook APP ID:
 
 ```xml
     <key>CFBundleURLTypes</key>
@@ -39,9 +46,10 @@
     </dict>
     </array>
 ```
+![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/plist_source.png)
 
-5) Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
-6) Overwrite `handleOpenURL:` and `applicationDidBecomeActive:` in your `AppDelegate.m`
+1. Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
+1. Overwrite `handleOpenURL:` and `applicationDidBecomeActive:` in your `AppDelegate.m`
 
 ```objective-c
     // for iOS prior 4.2
@@ -61,11 +69,7 @@
     }
 ```
 
-
-
-
-
-7) Post to Facebook:
+1. Post to Facebook:
 
 ```objective-c
     BMFacebookPost *post = [[BMFacebookPost alloc] 
