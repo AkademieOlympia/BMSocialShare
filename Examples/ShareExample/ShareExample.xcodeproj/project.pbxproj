@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BC2AD26315610A0400CF82F8 /* BMSocialShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2AD26215610A0400CF82F8 /* BMSocialShare.framework */; };
+		BC2AD26715610B8D00CF82F8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD26615610B8D00CF82F8 /* Default@2x.png */; };
+		BC2AD26915610C2100CF82F8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD26815610C2100CF82F8 /* Default.png */; };
 		BC8712D4146575F7007DF497 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8712D3146575F7007DF497 /* UIKit.framework */; };
 		BC8712D6146575F7007DF497 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8712D5146575F7007DF497 /* Foundation.framework */; };
 		BC8712D8146575F7007DF497 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8712D7146575F7007DF497 /* CoreGraphics.framework */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		BC2AD26215610A0400CF82F8 /* BMSocialShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMSocialShare.framework; path = ../../iOS/Binary/BMSocialShare.framework; sourceTree = "<group>"; };
+		BC2AD26615610B8D00CF82F8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BC2AD26815610C2100CF82F8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BC8712CF146575F7007DF497 /* ShareExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC8712D3146575F7007DF497 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BC8712D5146575F7007DF497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +135,8 @@
 		BC9D20501466C4D800FBC05D /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				BC2AD26815610C2100CF82F8 /* Default.png */,
+				BC2AD26615610B8D00CF82F8 /* Default@2x.png */,
 				BCC5E4E51466D7FC00AC08F5 /* background.png */,
 				BCC5E4E61466D7FC00AC08F5 /* background@2x.png */,
 				BCC5E4E71466D7FC00AC08F5 /* background~ipad.png */,
@@ -207,6 +213,8 @@
 				BCC5E4E81466D7FC00AC08F5 /* background.png in Resources */,
 				BCC5E4E91466D7FC00AC08F5 /* background@2x.png in Resources */,
 				BCC5E4EA1466D7FC00AC08F5 /* background~ipad.png in Resources */,
+				BC2AD26715610B8D00CF82F8 /* Default@2x.png in Resources */,
+				BC2AD26915610C2100CF82F8 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
