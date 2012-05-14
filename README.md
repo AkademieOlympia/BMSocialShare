@@ -19,10 +19,10 @@
 
 ## Facebook
 
-1. Create an App on Facebook http://developers.facebook.com/apps
-1. Copy your Facebook APP ID
-1. In Xcode right click on your `Info.plist`, choose `Open As -> Source Code`
-1. Insert the following snippet with your own Facebook APP ID:
+1) Create an App on Facebook http://developers.facebook.com/apps
+2) Copy your Facebook APP ID
+3) In Xcode right click on your `Info.plist`, choose `Open As -> Source Code`
+4) Insert the following snippet with your own Facebook APP ID:
 
 ```xml
     <key>CFBundleURLTypes</key>
@@ -38,10 +38,11 @@
     </array>
 ```
 
-1. Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
-1. Overwrite `handleOpenURL` in your `AppDelegate.m`
+5) Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
+6) Overwrite `handleOpenURL:` and `applicationDidBecomeActive:` in your `AppDelegate.m`
 
 ```objective-c
+    // for iOS prior 4.2
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
         return [[BMSocialShare sharedInstance] facebookHandleOpenURL:url];
     }
@@ -50,9 +51,19 @@
     - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
         return [[BMSocialShare sharedInstance] facebookHandleOpenURL:url];
     }
+    
+    // extend the access token
+    - (void)applicationDidBecomeActive:(UIApplication *)application
+    {
+        [[BMSocialShare sharedInstance] facebookExendAccessToken];
+    }
 ```
 
-1. Post to Facebook:
+
+
+
+
+7) Post to Facebook:
 
 ```objective-c
     BMFacebookPost *post = [[BMFacebookPost alloc] 
@@ -74,7 +85,7 @@
     [[BMSocialShare sharedInstance] facebookPublish:post];
 ```
 
-1. Or share an image in full size:
+8) Or share an image in full size:
 
 ```objective-c
     BMFacebookPost *post = [[BMFacebookPost alloc] initWithImage:[UIImage imageNamed:@"image.png"]];
