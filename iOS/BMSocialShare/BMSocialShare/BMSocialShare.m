@@ -221,7 +221,7 @@ typedef enum apiCall {
         
     }
     
-    _permissions = permissions;
+    _permissions = [permissions retain];
     
 }
 
