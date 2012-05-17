@@ -103,13 +103,73 @@ typedef enum apiCall {
             }
         }
         
-        // initialize facebook with default permissions
-        if (_appId != nil) {
-            NSLog(@"BMSocialShare: Using Facebook APP ID: %@", _appId);
-            [self facebookPermissions:[NSArray arrayWithObjects: @"publish_stream", nil]];
+        
+        
+        // Check App ID:
+        // This is really a warning for the developer, this should not
+        // happen in a completed app
+        if (!_appId) {
+            
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"Setup Error"
+                                      message:@"Missing app ID. You cannot run the app until you provide this in the code."
+                                      delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil,
+                                      nil];
+            [alertView show];
+            [alertView release];
+            
+            
+        } else {
+            
+            
+            // Now check that the URL scheme fb[app_id]://authorize is in the .plist and can
+            // be opened, doing a simple check without local app id factored in here
+            NSString *url = [NSString stringWithFormat:@"fb%@://authorize",_appId];
+            BOOL bSchemeInPlist = NO; // find out if the sceme is in the plist file.
+            NSArray* aBundleURLTypes = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleURLTypes"];
+            if ([aBundleURLTypes isKindOfClass:[NSArray class]] &&
+                ([aBundleURLTypes count] > 0)) {
+                NSDictionary* aBundleURLTypes0 = [aBundleURLTypes objectAtIndex:0];
+                if ([aBundleURLTypes0 isKindOfClass:[NSDictionary class]]) {
+                    NSArray* aBundleURLSchemes = [aBundleURLTypes0 objectForKey:@"CFBundleURLSchemes"];
+                    if ([aBundleURLSchemes isKindOfClass:[NSArray class]] &&
+                        ([aBundleURLSchemes count] > 0)) {
+                        NSString *scheme = [aBundleURLSchemes objectAtIndex:0];
+                        if ([scheme isKindOfClass:[NSString class]] &&
+                            [url hasPrefix:scheme]) {
+                            bSchemeInPlist = YES;
+                        }
+                    }
+                }
+            }
+            
+            
+            // Check if the authorization callback will work
+            BOOL bCanOpenUrl = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: url]];
+            if (!bCanOpenUrl) {
+                
+                UIAlertView *alertView = [[UIAlertView alloc]
+                                          initWithTitle:@"Setup Error"
+                                          message:@"Invalid or missing URL scheme. You cannot run the app until you set up a valid URL scheme in your .plist."
+                                          delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil,
+                                          nil];
+                [alertView show];
+                [alertView release];
+                
+            } else {
+
+                // initialize facebook with default permissions
+                NSLog(@"BMSocialShare: Using Facebook APP ID: %@", _appId);
+                [self facebookPermissions:[NSArray arrayWithObjects: @"publish_stream", nil]];
+
+            }
+            
         }
-        
-        
+
         
     }
     return self;
