@@ -1,13 +1,15 @@
 # BMSocialShare
 
-1. Post to Facebook or Twitter with an image and a comment by the user. Same via Email.
-1. Share the AppStore or Android Market link for your App.
-1. **NEW** Share an image on Facebook in full size by adding it to a photo album.
+1. Share to Facebook, Twitter or Email and attach an image!
+1. Supports **"Single Click Sharing"** - BMSocialShare logs your user in to Facebook, in case no credentials are provided and sends the post afterwards.
+1. Share full size images to Facebook walls
+1. BMSocialShare is available as framwork for simple integration or as a static library for more advanced use cases
+2. Questions? Contact me on Twitter [@vinzenzweber](http://twitter.com/vinzenzweber)
+
 
 ![Facebook iPhone](https://github.com/blockhaus/BMSocialShare/raw/documentation/header.png)
 
-
-## Install Framework version
+## Quick install: Use the framework version
 
 1. Download the [framework](https://github.com/downloads/blockhaus/BMSocialShare/BMSocialShare.framework_v0.2.zip)!
 1. Drag'n drop the `BMSocialShare.framework` folder into your Xcode project
@@ -15,10 +17,11 @@
 1. Add `Twitter.framework` for Twitter to work
 
 
-## Install Static Library version
+## Advanced install: Use the static library
 
 1. In your git repository's root folder do `git submodule add git@github.com:blockhaus/BMSocialShare.git`
 1. Afterwards download all submodules `git submodule update --init --recursive`
+2. Now follow the instructions in the screenshots:
 
 ![Xcode screenshot](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_0.png)
 ![Xcode screenshot](https://github.com/blockhaus/BMSocialShare/raw/documentation/BMSocialShare_Xcode_1.png)
