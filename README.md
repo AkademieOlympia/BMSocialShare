@@ -36,7 +36,6 @@ Questions? Contact me on Twitter [@vinzenzweber](http://twitter.com/vinzenzweber
 1. Copy your Facebook APP ID
 1. In Xcode right click on your `Info.plist`, choose `Open As -> Source Code`
 1. Insert the following snippet with your own Facebook APP ID:
-
 ```xml
     <key>CFBundleURLTypes</key>
     <array>
@@ -52,7 +51,6 @@ Questions? Contact me on Twitter [@vinzenzweber](http://twitter.com/vinzenzweber
 ```
 
 ![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/plist_source.png)
-
 1. Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
 1. Overwrite `handleOpenURL:` and `applicationDidBecomeActive:` in your `AppDelegate.m`
 ```objective-c
