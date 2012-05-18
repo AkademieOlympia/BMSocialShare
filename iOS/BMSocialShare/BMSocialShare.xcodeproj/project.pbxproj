@@ -7,15 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC2AD31615613B8800CF82F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2AD30615613A9D00CF82F8 /* Foundation.framework */; };
 		BC2AD31C15613B8800CF82F8 /* BMSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2AD31B15613B8800CF82F8 /* BMSocialShare.m */; };
-		BCC23B1515655F0B00593A40 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2EB114B8878500DA9B6D /* MessageUI.framework */; };
-		BCC23B1615655F0B00593A40 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2EAF14B8877700DA9B6D /* Twitter.framework */; };
-		BCC23B1815655F1000593A40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2E8014B86CD800DA9B6D /* UIKit.framework */; };
-		BCC23B1915655F1300593A40 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2EB114B8878500DA9B6D /* MessageUI.framework */; };
-		BCC23B1A15655F1300593A40 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2EAF14B8877700DA9B6D /* Twitter.framework */; };
-		BCC23B1B15655F1300593A40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F2E8014B86CD800DA9B6D /* UIKit.framework */; };
-		BCC23B1C15655F1300593A40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2AD30615613A9D00CF82F8 /* Foundation.framework */; };
 		BCC23B221565616A00593A40 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC2AD2121561050900CF82F8 /* FBDialog.bundle */; };
 		BCC23B241565620900593A40 /* BMSocialShare.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCC23B231565620900593A40 /* BMSocialShare.bundle */; };
 		BCC9AFCC15616700006C8F09 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2AD21B1561050900CF82F8 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -105,16 +97,12 @@
 		BC2AD22A1561050900CF82F8 /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFrictionlessRequestSettings.m; path = "../facebook-ios-sdk/src/FBFrictionlessRequestSettings.m"; sourceTree = "<group>"; };
 		BC2AD22B1561050900CF82F8 /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBLoginDialog.m; path = "../facebook-ios-sdk/src/FBLoginDialog.m"; sourceTree = "<group>"; };
 		BC2AD22C1561050900CF82F8 /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBRequest.m; path = "../facebook-ios-sdk/src/FBRequest.m"; sourceTree = "<group>"; };
-		BC2AD30615613A9D00CF82F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC2AD31515613B8800CF82F8 /* libBMSocialShare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBMSocialShare.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2AD31915613B8800CF82F8 /* BMSocialShare-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMSocialShare-Prefix.pch"; sourceTree = "<group>"; };
 		BC2AD31A15613B8800CF82F8 /* BMSocialShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMSocialShare.h; sourceTree = "<group>"; };
 		BC2AD31B15613B8800CF82F8 /* BMSocialShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMSocialShare.m; sourceTree = "<group>"; };
-		BC7F2E8014B86CD800DA9B6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BC7F2EA914B886E400DA9B6D /* BMDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDialog.m; sourceTree = "<group>"; };
 		BC7F2EAA14B886E400DA9B6D /* BMDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDialog.h; sourceTree = "<group>"; };
-		BC7F2EAF14B8877700DA9B6D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		BC7F2EB114B8878500DA9B6D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BC8712BF14656E03007DF497 /* BMFacebookPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMFacebookPost.h; sourceTree = "<group>"; };
 		BC8712C014656E03007DF497 /* BMFacebookPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMFacebookPost.m; sourceTree = "<group>"; };
 		BCC23B231565620900593A40 /* BMSocialShare.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BMSocialShare.bundle; sourceTree = "<group>"; };
@@ -130,10 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCC23B1515655F0B00593A40 /* MessageUI.framework in Frameworks */,
-				BCC23B1615655F0B00593A40 /* Twitter.framework in Frameworks */,
-				BCC23B1815655F1000593A40 /* UIKit.framework in Frameworks */,
-				BC2AD31615613B8800CF82F8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCC23B1915655F1300593A40 /* MessageUI.framework in Frameworks */,
-				BCC23B1A15655F1300593A40 /* Twitter.framework in Frameworks */,
-				BCC23B1B15655F1300593A40 /* UIKit.framework in Frameworks */,
-				BCC23B1C15655F1300593A40 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,10 +173,6 @@
 		BC7F2EAE14B8875800DA9B6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC7F2EB114B8878500DA9B6D /* MessageUI.framework */,
-				BC7F2EAF14B8877700DA9B6D /* Twitter.framework */,
-				BC7F2E8014B86CD800DA9B6D /* UIKit.framework */,
-				BC2AD30615613A9D00CF82F8 /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -480,6 +456,7 @@
 				DSTROOT = /tmp/BMSocialShare.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BMSocialShare/BMSocialShare-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
@@ -500,6 +477,7 @@
 				DSTROOT = /tmp/BMSocialShare.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BMSocialShare/BMSocialShare-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
@@ -581,6 +559,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -602,6 +581,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

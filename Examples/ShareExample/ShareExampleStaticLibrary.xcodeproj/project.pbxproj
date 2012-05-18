@@ -98,7 +98,6 @@
 		BC9D205C1466C7A300FBC05D /* button_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_email@2x.png"; sourceTree = "<group>"; };
 		BC9D205D1466C7A300FBC05D /* button_facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_facebook@2x.png"; sourceTree = "<group>"; };
 		BC9D205E1466C7A400FBC05D /* button_twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_twitter@2x.png"; sourceTree = "<group>"; };
-		BCC23B581565637C00593A40 /* ShareExample copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ShareExample copy-Info.plist"; path = "/Users/vinzenzweber/Documents/xcodeworkspace/blockhaus-git/BMSocialShare/Examples/ShareExample/ShareExample copy-Info.plist"; sourceTree = "<absolute>"; };
 		BCC5E4E51466D7FC00AC08F5 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BCC5E4E61466D7FC00AC08F5 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		BCC5E4E71466D7FC00AC08F5 /* background~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background~ipad.png"; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 				BC8712D9146575F7007DF497 /* ShareExample */,
 				BC8712D2146575F7007DF497 /* Frameworks */,
 				BC8712D0146575F7007DF497 /* Products */,
-				BCC23B581565637C00593A40 /* ShareExample copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,7 +251,7 @@
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Blockhaus Medienagentur";
 			};
-			buildConfigurationList = BC8712C9146575F7007DF497 /* Build configuration list for PBXProject "ShareExample" */;
+			buildConfigurationList = BC8712C9146575F7007DF497 /* Build configuration list for PBXProject "ShareExampleStaticLibrary" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -451,7 +449,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC8712C9146575F7007DF497 /* Build configuration list for PBXProject "ShareExample" */ = {
+		BC8712C9146575F7007DF497 /* Build configuration list for PBXProject "ShareExampleStaticLibrary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC8712EE146575F7007DF497 /* Debug */,
