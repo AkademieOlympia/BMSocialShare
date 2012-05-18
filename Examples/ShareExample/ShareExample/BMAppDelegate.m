@@ -59,8 +59,7 @@
      THIS CALL IS ESSENTIAL TO KEEP ACCESS TO FACEBOOK!
      MAKE SURE YOU IMPLEMENT IT IN YOUR OWN APP! ;)
      */
-    [[BMSocialShare sharedInstance] facebookExendAccessToken];
-
+    [[BMSocialShare sharedInstance] facebookExtendAccessToken];
 }
 
 
