@@ -4,7 +4,8 @@
 1. Supports **"Single Click Sharing"** - BMSocialShare logs your user in to Facebook, in case no credentials are provided and sends the post afterwards.
 1. Share full size images to Facebook walls
 1. BMSocialShare is available as framwork for simple integration or as a static library for more advanced use cases
-2. Questions? Contact me on Twitter [@vinzenzweber](http://twitter.com/vinzenzweber)
+
+Questions? Contact me on Twitter [@vinzenzweber](http://twitter.com/vinzenzweber)
 
 
 ![Facebook iPhone](https://github.com/blockhaus/BMSocialShare/raw/documentation/header.png)
@@ -49,11 +50,11 @@
     </dict>
     </array>
 ```
+
 ![plist source](https://github.com/blockhaus/BMSocialShare/raw/documentation/plist_source.png)
 
 1. Add `#import <BMSocialShare/BMSocialShare.h>` to your `AppDelegate.m`
 1. Overwrite `handleOpenURL:` and `applicationDidBecomeActive:` in your `AppDelegate.m`
-
 ```objective-c
     // for iOS prior 4.2
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
@@ -71,9 +72,7 @@
         [[BMSocialShare sharedInstance] facebookExendAccessToken];
     }
 ```
-
 1. Post to Facebook:
-
 ```objective-c
     BMFacebookPost *post = [[BMFacebookPost alloc] 
                             initWithTitle:@"Simple sharing via Facebook, Email and Twitter for iOS!" 
@@ -93,9 +92,7 @@
 
     [[BMSocialShare sharedInstance] facebookPublish:post];
 ```
-
-8) Or share an image in full size:
-
+1. Or share an image in full size:
 ```objective-c
     BMFacebookPost *post = [[BMFacebookPost alloc] initWithImage:[UIImage imageNamed:@"image.png"]];
     [[BMSocialShare sharedInstance] facebookPublish:post];
