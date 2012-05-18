@@ -257,7 +257,7 @@ typedef enum apiCall {
  * }
  *
  */
-- (void)facebookExendAccessToken {
+- (void)facebookExtendAccessToken {
     [_facebook extendAccessTokenIfNeeded];
 }
 
